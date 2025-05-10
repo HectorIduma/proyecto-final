@@ -1,0 +1,167 @@
+
+<html>
+  <head>
+ <meta charset="UTF-8">
+ 
+  <title>SJR - Journal Search</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  
+ <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />
+  <link href='./gridcss/grid.css' rel='stylesheet' type='text/css' />
+   <link href='./gridcss/sjr.css' rel='stylesheet' type='text/css' />
+ <link rel="shortcut icon" href="favicon.ico" />
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link href='./multisitebar/multisite.css' rel='stylesheet' type='text/css' />
+<script src="./js/raceme.min.js"></script>
+  <script src="./js/papaparse.min.js"></script>
+  
+  <script src="./js/Dataset.min.js"></script>
+  <script src="./js/Axis.min.js"></script>
+  <script src="./js/Elements.min.js"></script>
+  <script src="./js/Frame.min.js"></script>
+  <script src="./js/Properties.min.js"></script>
+  <script src="./js/View.min.js"></script>
+  <script src="./js/Utils.min.js"></script>
+  <script src="./js/Player.min.js"></script>
+  <script src="./js/Legend.min.js"></script>
+  <script src="./js/tooltip.min.js"></script>
+  <script src="./js/cola.min.js"></script>
+
+ 
+ <script src="./gridcss/grid.js"></script>
+ <script src="./js/mainmenu.js"></script>
+ 
+ <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<!-- desactivado -->
+<!-- End Cookie Consent plugin -->
+
+  </head>
+  <body>
+
+<!-- cookieconsent  -->
+<!--<script src="js/countries_cookie.js"></script>
+<script src="js/cookieconsent.js?v=6"></script> **** -->
+<!-- To check analytics or marketing or both cookies -->
+<!--<script src="js/checkcookiescategories.js?v=3"></script>  **** -->
+<!-- end cookie consent -->
+
+
+<aside class="multisitebar">
+	<div class="multisitebar_central">
+		<div class="siteslinks">
+			<a href="https://www.scimagojr.com" class="sjrlink currentsite"><img src="https://www.scimagojr.com/multisitebar/sjr.png" alt="SCImago Journal & Country Rank" /><span class="multisite_tooltip">SCImago Journal Country & Rank</span></a>
+			<a href="https://www.scimagoir.com" class="scimagoirlink"><img src="https://www.scimagojr.com/multisitebar/sir.png" alt="SCImago Institutions Rankings" /><span class="multisite_tooltip">SCImago Institutions Rankings</span></a>
+			<a href="https://www.scimagomedia.com" class="scimagomedialink"><img src="https://www.scimagojr.com/multisitebar/logo-white-128.png" alt="SCImago Media Rankings" /><span class="multisite_tooltip">SCImago Media Rankings</span></a>
+			<a href="https://www.scimagoiber.com" class="siriberlink"><img src="https://www.scimagojr.com/multisitebar/siriber.png" alt="SCImago Iber" /><span class="multisite_tooltip">SCImago Iber</span></a>
+			<a href="https://www.scimagorc.com" class="srcrlink"><img src="https://www.scimagojr.com/multisitebar/srcr.png" alt="SCImago Research Centers Ranking" /><span class="multisite_tooltip">SCImago Research Centers Ranking</span></a>
+			<a href="https://www.graphica.app" class="graphicalink"><img src="https://www.scimagojr.com/multisitebar/graphica.png" alt="SCImago Graphica" /><span class="multisite_tooltip">SCImago Graphica</span></a>
+			<a href="https://www.scimagoepi.com" class="epilink"><img src="https://www.scimagojr.com/multisitebar/epi.png" alt="Ediciones Profesionales de la Información " /><span class="multisite_tooltip">Ediciones Profesionales de la Informaci&oacute;n</span></a>
+		</div>
+		<div id="multisitebar_scimagolablink">
+			<a href="https://www.scimagolab.com"><img src="https://www.scimagojr.com/multisitebar/scimagolab_mobile.png" alt="SCImago Lab" class="multisitebar_scimagolablink_mobile" /><img class="multisitebar_scimagolablink_desktop" src="https://www.scimagojr.com/multisitebar/scimagolab.png" alt="SCImago Lab" /></a>
+		</div>
+	</div>
+</aside>
+
+
+<!-- <div class="related_sites"><span class="related_sites_text">also developed by scimago:</span> <a href="https://www.scimagoir.com"><img src="./img/siricon.png" alt="" />Scimago Institutions Rankings</a></div>  -->
+<div class='header'><a href=".\" title="home">
+<img id="logo" src="./img/logo.png" alt="SJR" />
+<div id="tag">Scimago Journal &amp; Country Rank</div>
+</a>
+<form id="searchbox" action="journalsearch.php" method="get">
+  <input type="text" name="q" value="Enter Journal Title, ISSN or Publisher Name" id="searchinput" onfocus="if(this.value == 'Enter Journal Title, ISSN or Publisher Name') { this.value = ''; }" onblur="if (this.value=='') {this.value='Enter Journal Title, ISSN or Publisher Name';}">
+  <input type="submit" id="searchbutton" value="" />
+  
+</form>
+</div>
+
+
+
+	<div id='menu_boton' style='cursor: pointer;'><img src='./img/menu.png' alt='menu'> menu</div><div id='mainmenu'><ul><li><a href='index.php'>Home</a></li><li><a href='journalrank.php'>Journal Rankings</a></li><li><a href='journalvalue.php'>Journal Value</a></li><li><a href='countryrank.php'>Country Rankings</a></li><li><a href='viztools.php'>Viz Tools</a></li><li><a href='help.php'>Help</a></li><li><a href='aboutus.php'>About Us</a></li></div>  
+<script defer data-domain="scimagojr.com" src="https://plausible.scimago.es/js/script.js"></script>
+
+
+<!-- adblocker Adsense
+<script async src="https://fundingchoicesmessages.google.com/i/pub-7636113250813806?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+-->
+<div class="journaldescription colblock">
+
+
+<form id="searchboxresults" action="journalsearch.php" method="get">
+  <input type="text" name="q" value="2d materials" id="searchinput" onfocus="if(this.value == 'Enter Journal Title, ISSN or Publisher Name') { this.value = ''; }" onblur="if (this.value=='') {this.value='Enter Journal Title, ISSN or Publisher Name';}">
+  <input type="submit" id="searchbutton" value="">
+  </form>
+  
+
+<div class="pagination" style="font-size: 14px;font-weight: 500;color: rgb(140,140,140);margin-bottom:40px;">1 - 20 of 890<div class="pagination_buttons"><a href="#" class="disabled"><img src="img/pag_left.png" title="previous" /></a><a href="journalsearch.php?q=2d materials&page=2&total_size=890" class=""><img src="img/pag_right.png" title="next" /></a></div></div>
+<div class="search_results">
+<!-- <a href="journalsearch.php?q=16590&tip=sid&clean=0"><span class="jrnlname">Lancet, The</span>United Kingdom<br />Elsevier Limited</a> -->
+<a href="journalsearch.php?q=19881&tip=sid&clean=0"><span class="jrnlname">Advanced Materials</span>United States<br />Wiley-Blackwell</a>
+<a href="journalsearch.php?q=17854&tip=sid&clean=0"><span class="jrnlname">Nature Materials</span>United Kingdom<br />Nature Publishing Group</a>
+<a href="journalsearch.php?q=28200&tip=sid&clean=0"><span class="jrnlname">Biomaterials</span>United Kingdom<br />Elsevier Ltd</a>
+<a href="journalsearch.php?q=12878&tip=sid&clean=0"><span class="jrnlname">Chemistry of Materials</span>United States<br />American Chemical Society</a>
+<a href="journalsearch.php?q=25143&tip=sid&clean=0"><span class="jrnlname">Advanced Functional Materials</span>Germany<br />Wiley-VCH Verlag</a>
+<a href="journalsearch.php?q=25858&tip=sid&clean=0"><span class="jrnlname">Journal of Hazardous Materials</span>Netherlands<br />Elsevier B.V.</a>
+<a href="journalsearch.php?q=21100199127&tip=sid&clean=0"><span class="jrnlname">Advanced Energy Materials</span>Germany<br />John Wiley and Sons Inc</a>
+<a href="journalsearch.php?q=24641&tip=sid&clean=0"><span class="jrnlname">Journal of Materials Chemistry</span>United Kingdom<br />Royal Society of Chemistry</a>
+<a href="journalsearch.php?q=19700171101&tip=sid&clean=0"><span class="jrnlname">ACS Applied Materials and Interfaces</span>United States<br />American Chemical Society</a>
+<a href="journalsearch.php?q=21100232403&tip=sid&clean=0"><span class="jrnlname">Journal of Materials Chemistry A</span>United Kingdom<br />Royal Society of Chemistry</a>
+<a href="journalsearch.php?q=24443&tip=sid&clean=0"><span class="jrnlname">Construction and Building Materials</span>United Kingdom<br />Elsevier Ltd</a>
+<a href="journalsearch.php?q=17811&tip=sid&clean=0"><span class="jrnlname">Materials Science and Engineering: A</span>United Kingdom<br />Elsevier Ltd</a>
+<a href="journalsearch.php?q=17797&tip=sid&clean=0"><span class="jrnlname">Materials and Design</span>Netherlands<br />Elsevier B.V.</a>
+<a href="journalsearch.php?q=17899&tip=sid&clean=0"><span class="jrnlname">Progress in Materials Science</span>United Kingdom<br />Elsevier Ltd</a>
+<a href="journalsearch.php?q=24769&tip=sid&clean=0"><span class="jrnlname">Materials Today</span>Netherlands<br />Elsevier B.V.</a>
+<a href="journalsearch.php?q=20972&tip=sid&clean=0"><span class="jrnlname">Journal of Materials Processing Technology</span>Netherlands<br />Elsevier B.V.</a>
+<a href="journalsearch.php?q=13332&tip=sid&clean=0"><span class="jrnlname">Solar Energy Materials and Solar Cells</span>Netherlands<br />Elsevier B.V.</a>
+<a href="journalsearch.php?q=21162&tip=sid&clean=0"><span class="jrnlname">Journal of Materials Science</span>United States<br />Springer</a>
+<a href="journalsearch.php?q=21100812243&tip=sid&clean=0"><span class="jrnlname">Nature Reviews Materials</span>United Kingdom<br />Nature Publishing Group</a>
+<a href="journalsearch.php?q=21100229207&tip=sid&clean=0"><span class="jrnlname">Journal of Materials Chemistry C</span>United Kingdom<br />Royal Society of Chemistry</a>
+
+
+<!-- 
+<div class="pagination" style="font-size: 14px;font-weight: 500;color: rgb(140,140,140);margin-top:40px;">1 - 50 of 1981
+<div class="pagination_buttons">
+<a href="#" class="disabled"><img src="img/pag_left.png" title="previous" /></a>
+<a href="#" class=""><img src="img/pag_right.png" title="next" /></a>
+</div>
+</div>
+ -->
+
+</div>
+<div class="pagination" style="font-size: 14px;font-weight: 500;color: rgb(140,140,140);margin-bottom:40px;">1 - 20 of 890<div class="pagination_buttons"><a href="#" class="disabled"><img src="img/pag_left.png" title="previous" /></a><a href="journalsearch.php?q=2d materials&page=2&total_size=890" class=""><img src="img/pag_right.png" title="next" /></a></div></div>
+</div>
+
+
+ 
+  
+</div>
+ 
+
+<div class="foot">
+  <div class="colblock">
+    <a href="http://www.scimagolab.com" class="logofooter" >Developed by:<br /><img src="./img/logo_footer.png" alt="Scimago Lab" /></a>
+    <a href="http://www.scopus.com" class="logofooter" >Powered by:<br /><img src="./img/scopus.png" alt="Powered by scopus" /></a>
+
+    
+    <p>Follow us on <a href="https://twitter.com/ScimagoJR">@ScimagoJR</a><br /><br /><a href="http://www.scimagolab.com">Scimago Lab</a>, Copyright 2007-2025. Data Source: <a href="http://www.scopus.com">Scopus&reg;</a></p>
+    <img src="./img/estmodusinrebus.png" alt="" id="tagline" title="Est modus in rebus (There is a proper measure in things). Horatio." alt="Est modus in rebus (There is a proper measure in things). Horatio."/>
+
+    <!--<p><a class="nav-link ccb__edit" href="#">Cookie settings</a></p>
+    <p><a href="https://www.scimagojr.com/cookie-policies.php">Cookie Policy</a></p>-->
+    <p><a href="https://www.scimagojr.com/legal-notice.php">Legal Notice</a></p>
+    <p><a href="https://www.scimagojr.com/privacy-policy.php">Privacy Policy</a></p>
+  </div>
+
+</div>
+  
+
+  </body>
+</html>

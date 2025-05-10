@@ -1,230 +1,245 @@
 import requests
-import json
 from bs4 import BeautifulSoup
-import os 
+import json
+import os
+import time
+import re
 
-class WebScrapper:
-    def __init__(self, archivo_entrada='datos/json/revistas.json',
-                 archivo_salida='datos/json/Scimagorevistas.json'):
-        self.archivo_entrada = archivo_entrada
-        self.archivo_salida = archivo_salida
-        self.url_base = "https://www.scimagojr.com/journalsearch.php?q="
-        self.encabezados = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-        self.datos_revistas = self.cargar_datos_existentes()
-        
-    def cargar_datos_existentes(self):
-        '''Carga los datos existentes desde el archivo JSON. Si el archivo no existe, devuelve un diccionario vacío.'''
-        if os.path.exists(self.archivo_salida):
-            with open(self.archivo_salida, 'r', encoding='utf-8') as file:
-                return json.load(file)
-        else:
-            return {}
-        
-    def guardar_datos(self):
-        '''Guarda los datos en el archivo JSON.'''
-        # Asegurarse de que el directorio existe
-        os.makedirs(os.path.dirname(self.archivo_salida), exist_ok=True)
-        with open(self.archivo_salida, 'w', encoding='utf-8') as file:
-            json.dump(self.datos_revistas, file, ensure_ascii=False, indent=2)
-        
-    def cargar_revistas_entradas(self):
-        '''Carga las revistas desde el archivo de entrada.'''
-        # Asegurarse de que el directorio existe
-        os.makedirs(os.path.dirname(self.archivo_entrada), exist_ok=True)
-        
-        if not os.path.exists(self.archivo_entrada):
-            print(f"El archivo {self.archivo_entrada} no existe. Creando archivo vacío.")
-            with open(self.archivo_entrada, 'w', encoding='utf-8') as file:
-                json.dump([], file)
-            return []
-        
-        with open(self.archivo_entrada, 'r', encoding='utf-8') as file:
-            try:
-                datos = json.load(file)
-                # Verificar el formato de los datos
-                if isinstance(datos, list):
-                    return datos
-                elif isinstance(datos, dict):
-                    # Convertir a lista si es un diccionario
-                    return [{"id": key, "title": value.get("title", "Sin título")} 
-                             for key, value in datos.items()]
-                else:
-                    print(f"Formato de datos no reconocido. Creando lista vacía.")
-                    return []
-            except json.JSONDecodeError:
-                print(f"Error al decodificar el archivo JSON. Verificar formato.")
-                return []
-        
-    def buscar_revista(self, titulo_revista):
-        '''Busca revistas en la página web de Scimago.'''
-        url_busqueda = self.url_base + titulo_revista.replace(" ", "+")
-        respuesta = requests.get(url_busqueda, headers=self.encabezados)
-        
-        if respuesta.status_code != 200:
-            print(f"Error al realizar la búsqueda: {respuesta.status_code}")
-            return None
-            
-        soup = BeautifulSoup(respuesta.text, 'html.parser')
-        enlaces = soup.select('.search_results a')
-        
-        if not enlaces:
-            print(f"No se encontraron resultados para {titulo_revista}.")
-            return None
-            
-        # Tomar el primer resultado
-        enlace_revista = enlaces[0]['href']
-        url_revista = f"https://www.scimagojr.com{enlace_revista}"
-        return self.extraer_datos(url_revista)
+def scrape_scimago(journal_title):
+    """
+    Extrae información sobre una revista científica de Scimago
+    """
+    # Convertir espacios para la URL de búsqueda
+    search_url = f"https://www.scimagojr.com/journalsearch.php?q={journal_title.replace(' ', '+')}"
     
-    def extraer_datos(self, url_revista):
-        '''Extrae los datos de la revista desde la página web.'''
-        respuesta = requests.get(url_revista, headers=self.encabezados)
+    try:
+        # Añadir User-Agent para evitar ser bloqueado
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        print(f"Buscando '{journal_title}' en: {search_url}")
+        search_response = requests.get(search_url, headers=headers)
+        search_response.raise_for_status()  # Verificar si la solicitud fue exitosa
         
-        if respuesta.status_code != 200:
-            print(f"Error al acceder a la página de la revista: {respuesta.status_code}")
+        # Guardar la página de búsqueda para depuración
+        with open("search_page.html", "w", encoding="utf-8") as f:
+            f.write(search_response.text)
+        print("Página de búsqueda guardada en 'search_page.html' para depuración")
+        
+        search_soup = BeautifulSoup(search_response.text, 'html.parser')
+        
+        # ESTRATEGIA 1: Buscar por clase específica
+        result_link = search_soup.find('a', class_='search_results_title')
+        
+        # ESTRATEGIA 2: Buscar por contenedor y título
+        if not result_link:
+            result_cells = search_soup.select('.search_results')
+            for cell in result_cells:
+                links = cell.find_all('a')
+                for link in links:
+                    if journal_title.lower() in link.text.lower():
+                        result_link = link
+                        print(f"Encontrado mediante estrategia 2: {link.text}")
+                        break
+                if result_link:
+                    break
+        
+        # ESTRATEGIA 3: Buscar cualquier enlace con href que contenga 'journalssearch'
+        if not result_link:
+            all_links = search_soup.find_all('a', href=re.compile(r'journalsearch\.php'))
+            for link in all_links:
+                if link.text and len(link.text.strip()) > 0:
+                    result_link = link
+                    print(f"Encontrado mediante estrategia 3: {link.text}")
+                    break
+        
+        if not result_link:
+            print(f"No se encontraron resultados para '{journal_title}'")
+            print("Revisa la estructura HTML en 'search_page.html'")
+            return None
+        
+        # Obtener la URL completa de la revista
+        href = result_link.get('href')
+        if not href:
+            print("El enlace no tiene atributo href")
             return None
             
-        soup = BeautifulSoup(respuesta.text, 'html.parser')
-        datos_revista = {}
+        if href.startswith('http'):
+            journal_url = href
+        else:
+            journal_url = "https://www.scimagojr.com/" + href
         
-        # 1. Sitio web de la revista
-        enlaces = soup.find_all('a', href=True)
-        for enlace in enlaces:
-            texto = enlace.text.lower()
-            if 'journal' in texto or 'website' in texto or 'homepage' in texto:
-                datos_revista['sitio_web'] = enlace['href']
+        print(f"Accediendo a: {journal_url}")
+        
+        # Pequeña pausa para evitar bloqueos
+        time.sleep(2)
+        
+        journal_response = requests.get(journal_url, headers=headers)
+        journal_response.raise_for_status()
+        
+        # Guardar la página de la revista para depuración
+        with open("journal_page.html", "w", encoding="utf-8") as f:
+            f.write(journal_response.text)
+        print("Página de la revista guardada en 'journal_page.html' para depuración")
+        
+        journal_soup = BeautifulSoup(journal_response.text, 'html.parser')
+        
+        # EXTRACCIÓN DE DATOS CON MÚLTIPLES ESTRATEGIAS
+        
+        # 1. H-index
+        h_index = None
+        h_index_element = journal_soup.find('span', class_='hindexnumber')
+        if h_index_element:
+            h_index = h_index_element.text.strip()
+        else:
+            # Buscar patrón de texto "H index: 123"
+            h_index_pattern = re.search(r'H index:\s*(\d+)', journal_soup.text)
+            if h_index_pattern:
+                h_index = h_index_pattern.group(1)
+        
+        # 2. Áreas temáticas
+        subject_areas = []
+        # Múltiples estrategias para áreas temáticas
+        selectors = [
+            '.journalsubject .subjectarea span',
+            '.cellsubject span',
+            '.subject-area',
+            '.subjectarea'
+        ]
+        
+        for selector in selectors:
+            elements = journal_soup.select(selector)
+            if elements:
+                subject_areas = [e.text.strip() for e in elements if e.text.strip()]
+                if subject_areas:
+                    break
+        
+        # 3. Editorial
+        publisher = None
+        publisher_selectors = [
+            'div.journalpublisher', 
+            '.cellpublisher', 
+            'label:contains("Publisher:")',
+            '.publisher'
+        ]
+        
+        for selector in publisher_selectors:
+            try:
+                element = None
+                if ':contains' in selector:
+                    # Tratamiento especial para selectores de tipo contains
+                    label = selector.split(':contains("')[0]
+                    text = selector.split(':contains("')[1].rstrip('")')
+                    labels = journal_soup.find_all(label)
+                    for lab in labels:
+                        if text in lab.text:
+                            element = lab.find_next()
+                            break
+                else:
+                    element = journal_soup.select_one(selector)
+                
+                if element and element.text.strip():
+                    publisher = element.text.strip()
+                    break
+            except Exception as e:
+                print(f"Error al buscar publisher con selector {selector}: {e}")
+        
+        # Si no se encontró por selectores, buscar en texto
+        if not publisher:
+            publisher_pattern = re.search(r'Publisher:\s*([^\n]+)', journal_soup.text)
+            if publisher_pattern:
+                publisher = publisher_pattern.group(1).strip()
+        
+        # 4. ISSN
+        issn = None
+        issn_element = journal_soup.find('div', class_='issn')
+        if not issn_element:
+            issn_element = journal_soup.select_one('.journalissn')
+        if not issn_element:
+            issn_pattern = re.search(r'ISSN:\s*([\d\-X]+)', journal_soup.text)
+            if issn_pattern:
+                issn = issn_pattern.group(1).strip()
+        else:
+            issn = issn_element.text.strip()
+        
+        # 5. Tipo de publicación
+        pub_type = None
+        type_selectors = ['div.publicationtype', '.celltype', '.type']
+        
+        for selector in type_selectors:
+            element = journal_soup.select_one(selector)
+            if element and element.text.strip():
+                pub_type = element.text.strip()
                 break
         
-        # 2. H-Index
-        h_index_elem = soup.select_one('.hindexnumber')
-        if h_index_elem:
-            datos_revista['h_index'] = h_index_elem.text.strip()
-        else:
-            datos_revista['h_index'] = "No disponible"
+        if not pub_type:
+            type_pattern = re.search(r'Type:\s*([^\n]+)', journal_soup.text)
+            if type_pattern:
+                pub_type = type_pattern.group(1).strip()
         
-        # 3. Subject Area and category
-        subject_areas = []
-        subjects_elem = soup.select('.subject_area_box')
-        for subject in subjects_elem:
-            area_name = subject.select_one('.subject_area_title')
-            if area_name:
-                subject_area = {
-                    "area": area_name.text.strip(),
-                    "categorias": []
-                }
-                
-                categorias = subject.select('.treecategory')
-                for cat in categorias:
-                    subject_area["categorias"].append(cat.text.strip())
-                
-                subject_areas.append(subject_area)
+        # Crear diccionario con los datos encontrados
+        data = {
+            "title": journal_title,
+            "url": journal_url,
+            "h_index": h_index,
+            "subject_area": subject_areas,
+            "publisher": publisher,
+            "issn": issn,
+            "publication_type": pub_type,
+            "search_url": search_url
+        }
         
-        datos_revista['subject_areas'] = subject_areas
+        # Imprimir resumen para verificación
+        print("\n--- DATOS EXTRAÍDOS ---")
+        print(f"Revista: '{journal_title}'")
+        print(f"URL: {journal_url}")
+        print(f"H-index: {h_index}")
+        print(f"Áreas: {', '.join(subject_areas) if subject_areas else 'No encontrado'}")
+        print(f"Editorial: {publisher}")
+        print(f"ISSN: {issn}")
+        print(f"Tipo: {pub_type}")
+        print("---------------------\n")
         
-        # 4. Publisher
-        publisher_elem = soup.find('p', text=lambda t: t and "Publisher:" in t)
-        if publisher_elem:
-            publisher = publisher_elem.findNext()
-            if publisher:
-                datos_revista['publisher'] = publisher.text.strip()
-            else:
-                datos_revista['publisher'] = "No disponible"
-        else:
-            datos_revista['publisher'] = "No disponible"
+        return data
         
-        # 5. ISSN
-        issn_elem = soup.select_one('.issn')
-        if issn_elem:
-            datos_revista['issn'] = issn_elem.text.strip()
-        else:
-            datos_revista['issn'] = "No disponible"
-        
-        # 6. Widget (URL del widget)
-        widget_url = f"https://www.scimagojr.com/journalsearch.php?q={datos_revista.get('issn', '')}&widget=1"
-        datos_revista['widget'] = widget_url
-        
-        # 7. Publication Type
-        publication_type_elem = soup.find('p', text=lambda t: t and "Publication type:" in t)
-        if publication_type_elem:
-            pub_type = publication_type_elem.findNext()
-            if pub_type:
-                datos_revista['publication_type'] = pub_type.text.strip()
-            else:
-                datos_revista['publication_type'] = "No disponible"
-        else:
-            datos_revista['publication_type'] = "No disponible"
-        
-        # Información adicional útil
-        # SJR
-        sjr_elem = soup.select_one('.sjr')
-        if sjr_elem:
-            datos_revista['sjr'] = sjr_elem.text.strip()
-        else:
-            datos_revista['sjr'] = "No disponible"
-        
-        # Título
-        titulo_elem = soup.select_one('.journalTitle')
-        if titulo_elem:
-            datos_revista['titulo'] = titulo_elem.text.strip()
-        else:
-            datos_revista['titulo'] = "No disponible"
-        
-        # Cuartil
-        cuartil_elem = soup.select_one('.cellqtop')
-        if cuartil_elem:
-            datos_revista['cuartil'] = cuartil_elem.text.strip()
-        else:
-            datos_revista['cuartil'] = "No disponible"
-        
-        return datos_revista
-        
-    def procesar_revistas(self):
-        """Procesa todas las revistas del archivo de entrada"""
-        revistas = self.cargar_revistas_entradas()
-        
-        if not revistas:
-            print("No se encontraron revistas para procesar")
-            return
-        
-        total = len(revistas)
-        procesadas = 0
-        
-        for revista in revistas:
-            # Verificar que revista sea un diccionario
-            if not isinstance(revista, dict):
-                print(f"Error: Se esperaba un diccionario, pero se encontró {type(revista)}. Omitiendo.")
-                continue
-                
-            # Obtener id y título con manejo seguro
-            id_revista = revista.get('id') if isinstance(revista, dict) else None
-            titulo_revista = revista.get('title') if isinstance(revista, dict) else None
-            
-            if not id_revista or not titulo_revista:
-                print("Revista sin ID o título. Omitiendo.")
-                continue
-                
-            if id_revista in self.datos_revistas:
-                print(f"La revista '{titulo_revista}' ya está en la base de datos")
-                procesadas += 1
-                continue
-                
-            print(f"Procesando {procesadas+1}/{total}: {titulo_revista}")
-            
-            datos_scimago = self.buscar_revista(titulo_revista)
-            
-            if datos_scimago:
-                self.datos_revistas[id_revista] = {
-                    **revista,
-                    **datos_scimago
-                }
-                self.guardar_datos()
-            
-            procesadas += 1
-            
-        print(f"Proceso completado. {procesadas} revistas procesadas.")
+    except requests.exceptions.RequestException as e:
+        print(f"Error al acceder a Scimago: {e}")
+        return None
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
 
+def main():
+    """
+    Función principal para ejecutar el scraper
+    """
+    # Revista a buscar
+    journal_title = "2d materials"
+    print(f"Iniciando búsqueda para '{journal_title}'...")
+    
+    # Ejecutar el scraper
+    info = scrape_scimago(journal_title)
+
+    # Verificar si se obtuvieron datos
+    if info:
+        # Crear directorio si no existe
+        output_path = os.path.join("datos", "json", "Scimago.json")
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # Guardar datos en formato JSON
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(info, f, indent=4, ensure_ascii=False)
+        
+        print(f"Información guardada exitosamente en {output_path}")
+        
+        # Mostrar contenido del JSON
+        print("\nContenido del archivo JSON:")
+        print(json.dumps(info, indent=4, ensure_ascii=False))
+    else:
+        print("No se pudo obtener información. El archivo JSON no se ha generado.")
+
+# Punto de entrada principal
 if __name__ == "__main__":
-    scrapper = WebScrapper()
-    scrapper.procesar_revistas()
-    print("Datos guardados en el archivo JSON.")
+    main()
