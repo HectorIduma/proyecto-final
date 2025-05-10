@@ -1,10 +1,26 @@
-{
-    "title": "2d materials",
-    "url": "https://www.scimagojr.com/journalsearch.php?q=19881&tip=sid&clean=0",
-    "h_index": null,
-    "subject_area": [],
-    "publisher": null,
-    "issn": null,
-    "publication_type": null,
-    "search_url": "https://www.scimagojr.com/journalsearch.php?q=2d+materials"
-}
+[
+    {
+        "title": "abcd-arquivos brasileiros de cirurgia digestiva-brazilian archives of digestive surgery",
+        "url": "https://www.scimagojr.com/journalsearch.php?q=21100229216&tip=sid&clean=0",
+        "h_index": null,
+        "subject_area": [
+            "MedicineGastroenterologyMedicine (miscellaneous)Surgery"
+        ],
+        "publisher": "Colegio Brasileiro de Cirurgia Digestiva",
+        "issn": "01026720",
+        "publication_type": null,
+        "search_url": "https://www.scimagojr.com/journalsearch.php?q=abcd-arquivos+brasileiros+de+cirurgia+digestiva-brazilian+archives+of+digestive+surgery"
+    },
+    {
+        "title": "2d materials",
+        "url": "https://www.scimagojr.com/journalsearch.php?q=19881&tip=sid&clean=0",
+        "h_index": null,
+        "subject_area": [
+            "EngineeringMechanical EngineeringMechanics of MaterialsMaterials ScienceMaterials Science (miscellaneous)Nanoscience and Nanotechnology"
+        ],
+        "publisher": "Wiley-Blackwell",
+        "issn": "09359648",
+        "publication_type": null,
+        "search_url": "https://www.scimagojr.com/journalsearch.php?q=2d+materials"
+    }
+]
