@@ -258,127 +258,166 @@ def scrape_scimago(journal_title):
         traceback.print_exc()
         return None
 
+def process_journals_from_json(input_json_path, output_json_path):
+    """
+    Lee títulos de revistas desde un archivo JSON y ejecuta el scraper para cada uno
+    
+    Args:
+        input_json_path: Ruta al archivo JSON con los títulos de revistas
+        output_json_path: Ruta donde guardar los resultados del scraping
+    """
+    print(f"Leyendo revistas desde: {input_json_path}")
+    
+    try:
+        # Intentar cargar el archivo de entrada
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            journals_data = json.load(f)
+        
+        # Verificar que se haya cargado correctamente
+        if not journals_data:
+            print("El archivo JSON está vacío o tiene un formato incorrecto.")
+            return
+            
+        print(f"Se encontraron datos en el archivo JSON. Procesando...")
+        
+        # Crear directorio de salida si no existe
+        os.makedirs(os.path.dirname(output_json_path), exist_ok=True)
+        
+        # Cargar datos existentes del archivo de salida o crear lista vacía
+        existing_data = []
+        if os.path.exists(output_json_path):
+            try:
+                with open(output_json_path, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+                    # Si no es una lista, convertirlo en una lista
+                    if not isinstance(existing_data, list):
+                        existing_data = [existing_data]
+                print(f"Archivo de salida existente cargado con {len(existing_data)} revistas.")
+            except json.JSONDecodeError:
+                print("El archivo JSON de salida está corrupto. Creando uno nuevo.")
+                existing_data = []
+            except Exception as e:
+                print(f"Error al cargar archivo de salida: {e}")
+                existing_data = []
+        
+        # Contador para estadísticas
+        processed_count = 0
+        success_count = 0
+        
+        # Procesar cada título de revista en el JSON
+        for key, value in journals_data.items():
+            # Buscar el título en diferentes posibles ubicaciones/formatos
+            journal_title = None
+            
+            # Opción 1: El valor directamente es el título
+            if isinstance(value, str):
+                journal_title = value
+            
+            # Opción 2: El título está dentro de un diccionario bajo alguna clave común
+            elif isinstance(value, dict):
+                # Posibles claves para el título
+                title_keys = ["titulo", "Titulo", "TITULO", "title", "Title", "TITLE", "TABULADOR"]
+                
+                for tk in title_keys:
+                    if tk in value:
+                        journal_title = value[tk]
+                        break
+            
+            # Si no encontramos título, usamos la clave como título
+            if not journal_title:
+                journal_title = key
+                
+            print(f"\nProcesando revista: '{journal_title}'")
+            processed_count += 1
+            
+            # Verificar si la revista ya existe en los datos de salida
+            journal_exists = False
+            for existing_journal in existing_data:
+                if existing_journal.get('title', '').lower() == journal_title.lower():
+                    print(f"La revista '{journal_title}' ya existe en el archivo de salida. Saltando...")
+                    journal_exists = True
+                    success_count += 1  # Contamos como exitoso aunque se salte
+                    break
+            
+            if journal_exists:
+                continue
+                
+            # Ejecutar el scraper para esta revista
+            print(f"Obteniendo datos de Scimago para '{journal_title}'...")
+            info = scrape_scimago(journal_title)
+            
+            # Si se obtuvieron datos, añadirlos al archivo de salida
+            if info:
+                existing_data.append(info)
+                success_count += 1
+                print(f"Revista '{journal_title}' añadida al archivo de salida.")
+                
+                # Cada 5 revistas, guardamos los resultados parciales
+                if processed_count % 5 == 0:
+                    with open(output_json_path, 'w', encoding='utf-8') as f:
+                        json.dump(existing_data, f, indent=4, ensure_ascii=False)
+                    print(f"Guardado parcial: {processed_count} revistas procesadas, {success_count} exitosas.")
+                
+                # Pausa para evitar sobrecargar el servidor
+                time.sleep(3)
+            else:
+                print(f"No se pudo obtener información para '{journal_title}'.")
+        
+        # Guardar todos los resultados al finalizar
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, indent=4, ensure_ascii=False)
+        
+        print(f"\n=== RESUMEN FINAL ===")
+        print(f"Total de revistas procesadas: {processed_count}")
+        print(f"Revistas con información obtenida: {success_count}")
+        print(f"Información guardada en: {output_json_path}")
+        
+    except json.JSONDecodeError as e:
+        print(f"Error al decodificar el archivo JSON de entrada: {e}")
+    except FileNotFoundError:
+        print(f"No se encontró el archivo: {input_json_path}")
+    except Exception as e:
+        print(f"Error inesperado al procesar el archivo JSON: {e}")
+        import traceback
+        traceback.print_exc()
+
 def main():
     """
     Función principal para ejecutar el scraper
     """
-    # Revista a buscar (se puede modificar o pasar como argumento)
-    journal_title = "2d materials"
-    print(f"Iniciando búsqueda para '{journal_title}'...")
+    # Rutas de los archivos
+    input_json_path = os.path.join("datos", "json", "revistas.json")
+    output_json_path = os.path.join("datos", "json", "Scimago.json")
     
-    # Ejecutar el scraper
-    info = scrape_scimago(journal_title)
-
-    # Verificar si se obtuvieron datos
-    if info:
-        # Crear directorio si no existe
-        output_path = os.path.join("datos", "json", "Scimago.json")
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        
-        # Cargar datos existentes o crear lista vacía si no existe el archivo
-        existing_data = []
-        if os.path.exists(output_path):
-            try:
-                with open(output_path, 'r', encoding='utf-8') as f:
-                    existing_data = json.load(f)
-                    # Si no es una lista, conviértelo en una lista que contenga ese elemento
-                    if not isinstance(existing_data, list):
-                        existing_data = [existing_data]
-                print(f"Archivo existente cargado con {len(existing_data)} revistas.")
-            except json.JSONDecodeError:
-                print("El archivo JSON existente está corrupto. Creando uno nuevo.")
-                existing_data = []
-            except Exception as e:
-                print(f"Error al cargar archivo existente: {e}")
-                existing_data = []
-        
-        # Comprobar si la revista ya existe en los datos
-        journal_exists = False
-        for i, journal in enumerate(existing_data):
-            if journal.get('title') == info['title']:
-                # Actualizar datos de revista existente
-                existing_data[i] = info
-                journal_exists = True
-                print(f"Revista '{info['title']}' actualizada en el archivo existente.")
-                break
-        
-        # Si la revista no existe, añadirla a la lista
-        if not journal_exists:
-            existing_data.append(info)
-            print(f"Revista '{info['title']}' añadida al archivo.")
-        
-        # Guardar lista actualizada en el archivo JSON
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(existing_data, f, indent=4, ensure_ascii=False)
-        
-        print(f"Información guardada exitosamente en {output_path}")
-        print(f"Total de revistas en el archivo: {len(existing_data)}")
-        
-        # Mostrar último contenido añadido
-        print("\nÚltima revista añadida/actualizada:")
-        print(json.dumps(info, indent=4, ensure_ascii=False))
-    else:
-        print("No se pudo obtener información. El archivo JSON no ha sido modificado.")
+    print(f"Iniciando procesamiento de revistas desde archivo JSON...")
+    print(f"Archivo de entrada: {input_json_path}")
+    print(f"Archivo de salida: {output_json_path}")
+    
+    # Procesar las revistas desde el archivo JSON
+    process_journals_from_json(input_json_path, output_json_path)
 
 # Punto de entrada principal
 if __name__ == "__main__":
     import sys
     
-    # Comprobar si se proporcionó un nombre de revista como argumento
+    # Comprobar si se proporcionaron argumentos adicionales
     if len(sys.argv) > 1:
-        # Unir todos los argumentos como nombre de la revista
-        journal_title = " ".join(sys.argv[1:])
-        print(f"Usando nombre de revista desde argumentos: '{journal_title}'")
-        
-        # Ejecutar el scraper para la revista especificada
-        info = scrape_scimago(journal_title)
-
-        # Verificar si se obtuvieron datos
-        if info:
-            # Crear directorio si no existe
-            output_path = os.path.join("datos", "json", "Scimago.json")
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # Si hay argumentos, verificar si son rutas personalizadas
+        if sys.argv[1] == "--input" and len(sys.argv) >= 3:
+            input_path = sys.argv[2]
+            output_path = os.path.join("datos", "json", "Scimago.json")  # Salida por defecto
             
-            # Cargar datos existentes o crear lista vacía si no existe el archivo
-            existing_data = []
-            if os.path.exists(output_path):
-                try:
-                    with open(output_path, 'r', encoding='utf-8') as f:
-                        existing_data = json.load(f)
-                        # Si no es una lista, conviértelo en una lista que contenga ese elemento
-                        if not isinstance(existing_data, list):
-                            existing_data = [existing_data]
-                    print(f"Archivo existente cargado con {len(existing_data)} revistas.")
-                except json.JSONDecodeError:
-                    print("El archivo JSON existente está corrupto. Creando uno nuevo.")
-                    existing_data = []
-                except Exception as e:
-                    print(f"Error al cargar archivo existente: {e}")
-                    existing_data = []
-            
-            # Comprobar si la revista ya existe en los datos
-            journal_exists = False
-            for i, journal in enumerate(existing_data):
-                if journal.get('title').lower() == info['title'].lower():
-                    # Actualizar datos de revista existente
-                    existing_data[i] = info
-                    journal_exists = True
-                    print(f"Revista '{info['title']}' actualizada en el archivo existente.")
-                    break
-            
-            # Si la revista no existe, añadirla a la lista
-            if not journal_exists:
-                existing_data.append(info)
-                print(f"Revista '{info['title']}' añadida al archivo.")
-            
-            # Guardar lista actualizada en el archivo JSON
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(existing_data, f, indent=4, ensure_ascii=False)
-            
-            print(f"Información guardada exitosamente en {output_path}")
-            print(f"Total de revistas en el archivo: {len(existing_data)}")
+            # Si también hay ruta de salida personalizada
+            if len(sys.argv) >= 5 and sys.argv[3] == "--output":
+                output_path = sys.argv[4]
+                
+            print(f"Usando ruta de entrada personalizada: {input_path}")
+            print(f"Usando ruta de salida personalizada: {output_path}")
+            process_journals_from_json(input_path, output_path)
         else:
-            print("No se pudo obtener información. El archivo JSON no ha sido modificado.")
+            print("Uso: python web_Scrapper.py [--input ruta_entrada.json] [--output ruta_salida.json]")
+            print("Por defecto se usará 'datos/json/revistas.json' como entrada y 'datos/json/Scimago.json' como salida.")
+            main()
     else:
-        # Ejecutar la función main por defecto
+        # Ejecutar con rutas predeterminadas
         main()
