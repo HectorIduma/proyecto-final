@@ -87,26 +87,53 @@ def scrape_scimago(journal_title):
         
         # EXTRACCIÓN DE DATOS CON MÚLTIPLES ESTRATEGIAS
         
-        # 1. H-index
+        # 1. H-index - CORREGIDA LA EXTRACCIÓN
         h_index = None
+        
+        # Estrategia 1: Buscar el elemento específico con clase 'hindexnumber'
         h_index_element = journal_soup.find('span', class_='hindexnumber')
         if h_index_element:
             h_index = h_index_element.text.strip()
-        else:
-            # Buscar en la celda de H index
+        
+        # Estrategia 2: Buscar en celda con clase 'cellh'
+        if not h_index:
             h_cell = journal_soup.select_one('.cellh')
             if h_cell:
                 h_index = h_cell.text.strip()
-            else:
-                # Buscar patrón de texto "H index: 123"
-                h_index_pattern = re.search(r'H index:\s*(\d+)', journal_soup.text)
-                if h_index_pattern:
-                    h_index = h_index_pattern.group(1)
-                else:
-                    # Buscar texto de H index con regex más flexible
-                    h_index_flex = re.search(r'[Hh][\s\-]*index:?\s*(\d+)', journal_soup.text)
-                    if h_index_flex:
-                        h_index = h_index_flex.group(1)
+        
+        # Estrategia 3: Buscar en toda la página para el h-index
+        if not h_index:
+            # Primero intentamos encontrar cualquier número que aparezca cerca de "H index"
+            h_section = journal_soup.find(string=re.compile(r'H[\s\-]*index', re.IGNORECASE))
+            if h_section:
+                parent = h_section.parent
+                if parent:
+                    # Buscar números en el texto del padre
+                    h_index_numbers = re.search(r'(\d+)', parent.text)
+                    if h_index_numbers:
+                        h_index = h_index_numbers.group(1)
+        
+        # Estrategia 4: Buscar en divs o spans que contengan "h-index" o "h index"
+        if not h_index:
+            h_divs = journal_soup.find_all(['div', 'span'], string=re.compile(r'[Hh][\s\-]*Index'))
+            for div in h_divs:
+                numbers = re.search(r'(\d+)', div.text)
+                if numbers:
+                    h_index = numbers.group(1)
+                    break
+                # También buscar en el elemento siguiente
+                next_elem = div.find_next()
+                if next_elem:
+                    numbers = re.search(r'(\d+)', next_elem.text)
+                    if numbers:
+                        h_index = numbers.group(1)
+                        break
+        
+        # Estrategia 5: Último recurso, buscar en toda la página
+        if not h_index:
+            h_pattern = re.search(r'[Hh][\s\-]*Index:?\s*(\d+)', journal_soup.text)
+            if h_pattern:
+                h_index = h_pattern.group(1)
         
         # 2. Áreas temáticas
         subject_areas = []
@@ -193,42 +220,78 @@ def scrape_scimago(journal_title):
             if issn_pattern:
                 issn = issn_pattern.group(1).strip()
         
-        # 5. Tipo de publicación
+        # 5. Tipo de publicación - CORREGIDA LA EXTRACCIÓN
         pub_type = None
-        type_selectors = ['div.publicationtype', '.celltype', '.type']
+        
+        # Estrategia 1: Usar selectores más específicos y expandidos
+        type_selectors = [
+            'div.publicationtype', 
+            '.celltype', 
+            '.type',
+            '.journal-type',
+            '.journal_type',
+            '.publication-type'
+        ]
         
         for selector in type_selectors:
             element = journal_soup.select_one(selector)
             if element and element.text.strip():
                 pub_type = element.text.strip()
+                # Limpiar prefijo "Type:" si existe
+                if 'Type:' in pub_type:
+                    pub_type = pub_type.split('Type:', 1)[1].strip()
                 break
         
-        # Si no se encuentra, buscar etiquetas con "Type"
+        # Estrategia 2: Buscar elementos que contengan "Type:" o "Publication Type:"
         if not pub_type:
-            type_labels = journal_soup.find_all(['label', 'div', 'span'], string=re.compile(r'Type:', re.IGNORECASE))
+            type_labels = journal_soup.find_all(
+                ['label', 'div', 'span', 'p', 'td'], 
+                string=re.compile(r'(Type|Publication Type):', re.IGNORECASE)
+            )
             for label in type_labels:
+                # Intentar extraer del texto después de "Type:"
+                if ':' in label.text:
+                    type_text = label.text.split(':', 1)[1].strip()
+                    if type_text and not re.match(r'^\s*$', type_text):
+                        pub_type = type_text
+                        break
+                # O buscar en el siguiente elemento
                 next_elem = label.find_next()
                 if next_elem and next_elem.text.strip():
                     pub_type = next_elem.text.strip()
                     break
-                # O extraer del texto después de "Type:"
-                if ':' in label.text:
-                    type_text = label.text.split(':', 1)[1].strip()
-                    if type_text:
-                        pub_type = type_text
+        
+        # Estrategia 3: Buscar en tablas o secciones específicas
+        if not pub_type:
+            # Buscar en filas de tabla que contengan "Type"
+            type_rows = journal_soup.find_all('tr')
+            for row in type_rows:
+                if re.search(r'Type', row.text, re.IGNORECASE):
+                    cells = row.find_all('td')
+                    if len(cells) >= 2:
+                        pub_type = cells[1].text.strip()
                         break
         
-        # Si aún no se encuentra, buscar en el texto completo
+        # Estrategia 4: Búsqueda amplia en el texto
         if not pub_type:
-            type_pattern = re.search(r'Type:?\s*([^\n]+)', journal_soup.text)
-            if type_pattern:
-                pub_type = type_pattern.group(1).strip()
+            # Patrones comunes para tipo de publicación
+            type_patterns = [
+                r'Type:?\s*([^\n;]+)',
+                r'Publication Type:?\s*([^\n;]+)',
+                r'Document Type:?\s*([^\n;]+)'
+            ]
+            
+            for pattern in type_patterns:
+                type_match = re.search(pattern, journal_soup.text, re.IGNORECASE)
+                if type_match:
+                    pub_type = type_match.group(1).strip()
+                    break
         
         # Crear diccionario con los datos encontrados
         data = {
             "title": journal_title,
             "url": journal_url,
-            "h_index": h_index,
+            "h-index": h_index,
             "subject_area": subject_areas,
             "publisher": publisher,
             "issn": issn,
