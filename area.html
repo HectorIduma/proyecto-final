@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head><title>Buscar por Área</title></head>
+<body>
+<h1>Áreas</h1>
+<form method="get">
+    <select name="area">
+        <option value="">Seleccione un área</option>
+        {% for area in areas %}
+            <option value="{{ area }}" {% if area == selected %}selected{% endif %}>{{ area }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+<ul>
+{% for journal in journals %}
+    <li><a href="{{ journal.url }}">{{ journal.title }}</a> - {{ journal.publisher }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
