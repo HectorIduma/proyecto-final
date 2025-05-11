@@ -287,6 +287,98 @@ def scrape_scimago(journal_title):
                     pub_type = type_match.group(1).strip()
                     break
         
+        # 6. NUEVO: Extraer el widget de la revista
+        widget_url = None
+        widget_html = None
+        
+        # Estrategia 1: Búsqueda directa de las clases específicas "imgwidget" o "widgetlegend"
+        img_widgets = journal_soup.find_all('img', class_=re.compile(r'imgwidget|widgetlegend', re.IGNORECASE))
+        for img in img_widgets:
+            src = img.get('src')
+            if src:
+                widget_url = src
+                # Si es una URL relativa, convertirla a absoluta
+                if widget_url and not widget_url.startswith('http'):
+                    if widget_url.startswith('//'):
+                        widget_url = 'https:' + widget_url
+                    elif widget_url.startswith('/'):
+                        widget_url = 'https://www.scimagojr.com' + widget_url
+                    else:
+                        widget_url = 'https://www.scimagojr.com/' + widget_url
+                widget_html = str(img)
+                print(f"Widget encontrado por clase 'imgwidget/widgetlegend': {widget_url}")
+                break
+        
+        # Estrategia 2: Buscar imágenes que contengan "journal_img.php?id=" en la URL
+        if not widget_url:
+            journal_imgs = journal_soup.find_all('img', src=re.compile(r'journal_img\.php\?id=', re.IGNORECASE))
+            for img in journal_imgs:
+                widget_url = img.get('src')
+                # Si es una URL relativa, convertirla a absoluta
+                if widget_url and not widget_url.startswith('http'):
+                    if widget_url.startswith('//'):
+                        widget_url = 'https:' + widget_url
+                    elif widget_url.startswith('/'):
+                        widget_url = 'https://www.scimagojr.com' + widget_url
+                    else:
+                        widget_url = 'https://www.scimagojr.com/' + widget_url
+                widget_html = str(img)
+                print(f"Widget encontrado por URL 'journal_img.php': {widget_url}")
+                break
+        
+        # Estrategia 3: Buscar imágenes con atributo alt que contenga "SCImago Journal & Country Rank"
+        if not widget_url:
+            rank_imgs = journal_soup.find_all('img', alt=re.compile(r'SCImago Journal (&|and) Country Rank', re.IGNORECASE))
+            for img in rank_imgs:
+                widget_url = img.get('src')
+                # Si es una URL relativa, convertirla a absoluta
+                if widget_url and not widget_url.startswith('http'):
+                    if widget_url.startswith('//'):
+                        widget_url = 'https:' + widget_url
+                    elif widget_url.startswith('/'):
+                        widget_url = 'https://www.scimagojr.com' + widget_url
+                    else:
+                        widget_url = 'https://www.scimagojr.com/' + widget_url
+                widget_html = str(img)
+                print(f"Widget encontrado por alt text 'SCImago Journal & Country Rank': {widget_url}")
+                break
+        
+        # Estrategia 4: Buscar elementos padre que contengan imágenes de widget
+        if not widget_url:
+            widget_containers = journal_soup.find_all(['div', 'span'], class_=re.compile(r'widget|rank|scimago', re.IGNORECASE))
+            for container in widget_containers:
+                img = container.find('img')
+                if img and img.get('src'):
+                    widget_url = img.get('src')
+                    # Si es una URL relativa, convertirla a absoluta
+                    if widget_url and not widget_url.startswith('http'):
+                        if widget_url.startswith('//'):
+                            widget_url = 'https:' + widget_url
+                        elif widget_url.startswith('/'):
+                            widget_url = 'https://www.scimagojr.com' + widget_url
+                        else:
+                            widget_url = 'https://www.scimagojr.com/' + widget_url
+                    widget_html = str(img)
+                    print(f"Widget encontrado en contenedor: {widget_url}")
+                    break
+        
+        # Estrategia 5: Construir URL del widget basada en el ID de la revista (si se puede extraer)
+        if not widget_url:
+            # Intentar extraer el ID de la revista de la URL actual
+            journal_id_match = re.search(r'journalid=(\d+)', journal_url)
+            if journal_id_match:
+                journal_id = journal_id_match.group(1)
+                # Construir la URL del widget común de Scimago usando journal_img.php
+                widget_url = f"https://www.scimagojr.com/journal_img.php?id={journal_id}"
+                print(f"Widget URL construida a partir del ID: {widget_url}")
+            else:
+                # Intento adicional: buscar el ID en cualquier parte del HTML
+                any_id_match = re.search(r'[?&]id=(\d+)', journal_soup.text)
+                if any_id_match:
+                    journal_id = any_id_match.group(1)
+                    widget_url = f"https://www.scimagojr.com/journal_img.php?id={journal_id}"
+                    print(f"Widget URL construida a partir de ID encontrado en el HTML: {widget_url}")
+        
         # Crear diccionario con los datos encontrados
         data = {
             "title": journal_title,
@@ -296,7 +388,9 @@ def scrape_scimago(journal_title):
             "publisher": publisher,
             "issn": issn,
             "publication_type": pub_type,
-            "search_url": search_url
+            "search_url": search_url,
+            "widget_url": widget_url,
+            "widget_html": widget_html
         }
         
         # Imprimir resumen para verificación
@@ -308,6 +402,8 @@ def scrape_scimago(journal_title):
         print(f"Editorial: {publisher}")
         print(f"ISSN: {issn}")
         print(f"Tipo: {pub_type}")
+        print(f"URL Widget: {widget_url}")
+        print(f"Widget HTML: {'Encontrado' if widget_html else 'No encontrado'}")
         print("---------------------\n")
         
         return data
