@@ -15,7 +15,7 @@
         <tbody>
             {% for journal in journals %}
             <tr>
-                <td><a href="/revista/{{ journal.h_index }}">{{ journal.title }}</a></td>
+                <td><a href="/revista/{{ journal.title }}">{{ journal.title }}</a></td>
                 <td>{{ journal.h_index }}</td>
             </tr>
             {% endfor %}

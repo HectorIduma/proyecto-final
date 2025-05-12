@@ -68,14 +68,20 @@ def revistas_por_area(nombre_area):
     journals = get_revistas_por_area(nombre_area)
     return render_template('revistas_por_area.html', area=nombre_area, journals=journals)
 
+@app.route('/buscar', methods=['GET'])
+def buscar():
+    query = request.args.get('query', '').strip()  # Obtener la palabra o frase a buscar
+    resultados = []
 
-##@app.route('/buscar')
-##def buscar():
-##  return render_template('buscar.html')
+    if query:
+        # Usar la función de búsqueda para obtener las revistas que contienen el término de búsqueda
+        resultados = sistema.buscar_revistas_por_titulo(query)  # Llamamos a la función para obtener las revistas
 
-##@app.route('/catalogo')
-##def catalogo():
-##  return render_template('catalogo.html')
+    return render_template('buscar.html', resultados=resultados, query=query)
+
+@app.route('/catalogo')
+def catalogo():
+    return render_template('catalogo.html', revistas=data)
 
 @app.route('/explorar')
 def explorar():
@@ -88,14 +94,17 @@ def explorar_por_letra(letra):
     revistas = [revista for revista in sistema.revista if revista.title.strip().lower().startswith(letra)]
     return render_template('revistas_por_letra.html', letra=letra, revistas=revistas)
 
+@app.route('/revista/<nombre_revista>')
+def mostrar_revista(nombre_revista):
+    # Buscar la revista por título exacto
+    for revista in sistema.revista:
+        if revista.title.strip().lower() == nombre_revista.strip().lower():
+            return render_template('revista.html', revista=revista.to_dict())
+    return f"No se encontró la revista con el nombre: {nombre_revista}", 404
 
-
-
-
-##@app.route('/creditos')
-##def creditos():
-##    return render_template('creditos.html')
+@app.route('/creditos')
+def creditos():
+    return render_template('creditos.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-

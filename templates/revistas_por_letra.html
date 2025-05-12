@@ -15,7 +15,8 @@
         <tbody>
             {% for revista in revistas %}
             <tr>
-                <td>{{ revista.title }}</td>
+                <td><a href="/revista/{{ revista.title }}">{{ revista.title }}</a></td>
+                <td>{{ revista.h_index }}</td>
             </tr>
             {% endfor %}
         </tbody>
