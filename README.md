@@ -70,7 +70,7 @@ proyecto-final/
 
 5. Inicia la aplicación:
    ```
-   python app.py
+   python app2.py
    ```
 
 6. Abre tu navegador y visita `http://localhost:5000`
