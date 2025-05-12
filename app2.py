@@ -71,16 +71,21 @@ def revistas_por_area(nombre_area):
 @app.route('/buscar')
 def buscar():
     query = request.args.get('q', '').strip().lower().replace(" ", "")
+    
+    with open('Scimago.json', encoding='utf-8') as f:
+        revistas = json.load(f)  # Asegúrate de que sea una lista de diccionarios
 
     if not query:
         return render_template('buscar.html', revistas=[], query=query)
 
     resultados = [
-        revista for revista in revista
+        revista for revista in revistas
         if query in revista.get('title', '').strip().lower().replace(" ", "")
     ]
 
     return render_template('buscar.html', revistas=resultados, query=query)
+
+
 
 
 @app.route('/catalogo')
