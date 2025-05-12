@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Resultados de la Búsqueda{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Resultados de la búsqueda</h2>
+    
+    <form action="/buscar" method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar revista" name="query" value="{{ query }}">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+    </form>
+
+    {% if query %}
+        <h4>Resultados para: "{{ query }}"</h4>
+    {% endif %}
+    
+    {% if resultados %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>H-Index</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revista in resultados %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('revista', titulo=revista['title'] | replace(" ", "-") | lower) }}">
+                        {{ revista['title'] }}
+                    </a>
+                </td>
+                <td>{{ revista['h_index'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No se encontraron resultados para la búsqueda.</p>
+    {% endif %}
+</div>
+{% endblock %}

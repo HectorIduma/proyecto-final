@@ -57,6 +57,9 @@ class sistema_de_busqueda:
             if revista.title.strip().lower().startswith(letra_buscada.lower()):
                 revistas_encontradas.append(revista.to_dict())
         return revistas_encontradas
+    
+    def buscar_revistas_por_titulo(titulo_parcial):
+        return [revista for revista in revista if titulo_parcial.lower() in revista.title.lower()]
 
 
     
