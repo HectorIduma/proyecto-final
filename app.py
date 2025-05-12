@@ -4,12 +4,12 @@ import os
 import json
 
 def columnas_areas(ruta):
-    resultado = {}  # Usamos un diccionario para registrar de dónde viene cada título
+    resultado = {}  
 
-    archivos_csv = glob.glob(os.path.join(ruta, '*.csv'))
+    archivos_csv = glob.glob(os.path.join(ruta, '*.csv')) #se utilizo ia para leer los archivos con terminacion en .csv
 
     for ruta in archivos_csv:
-        area_nombre = os.path.splitext(os.path.basename(ruta))[0]  # nombre del archivo sin extensión
+        area_nombre = os.path.splitext(os.path.basename(ruta))[0]  
         print(f"Procesando: {ruta} como área: {area_nombre}")
         with open(ruta, newline='', encoding='latin-1') as archivo:
             lector = csv.DictReader(archivo)
