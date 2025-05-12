@@ -88,9 +88,13 @@ def explorar_por_letra(letra):
     revistas = [revista for revista in sistema.revista if revista.title.strip().lower().startswith(letra)]
     return render_template('revistas_por_letra.html', letra=letra, revistas=revistas)
 
-
-
-
+@app.route('/revista/<nombre_revista>')
+def mostrar_revista(nombre_revista):
+    # Buscar la revista por título exacto
+    for revista in sistema.revista:
+        if revista.title.strip().lower() == nombre_revista.strip().lower():
+            return render_template('revista.html', revista=revista.to_dict())
+    return f"No se encontró la revista con el nombre: {nombre_revista}", 404
 
 ##@app.route('/creditos')
 ##def creditos():
