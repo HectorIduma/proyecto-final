@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html>
+<head><title>Catálogo de Revistas</title></head>
+<body>
+<h1>Catálogo completo</h1>
+<ul>
+{% for journal in journals %}
+    <li><a href="{{ journal.url }}">{{ journal.title }}</a> - {{ journal.publisher }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
