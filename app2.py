@@ -68,16 +68,20 @@ def revistas_por_area(nombre_area):
     journals = get_revistas_por_area(nombre_area)
     return render_template('revistas_por_area.html', area=nombre_area, journals=journals)
 
-@app.route('/buscar', methods=['GET'])
+@app.route('/buscar')
 def buscar():
-    query = request.args.get('query', '').strip()  # Obtener la palabra o frase a buscar
-    resultados = []
+    query = request.args.get('q', '').strip().lower().replace(" ", "")
 
-    if query:
-        # Usar la función de búsqueda para obtener las revistas que contienen el término de búsqueda
-        resultados = sistema.buscar_revistas_por_titulo(query)  # Llamamos a la función para obtener las revistas
+    if not query:
+        return render_template('buscar.html', revistas=[], query=query)
 
-    return render_template('buscar.html', resultados=resultados, query=query)
+    resultados = [
+        revista for revista in revista
+        if query in revista.get('title', '').strip().lower().replace(" ", "")
+    ]
+
+    return render_template('buscar.html', revistas=resultados, query=query)
+
 
 @app.route('/catalogo')
 def catalogo():
@@ -96,7 +100,6 @@ def explorar_por_letra(letra):
 
 @app.route('/revista/<nombre_revista>')
 def mostrar_revista(nombre_revista):
-    # Buscar la revista por título exacto
     for revista in sistema.revista:
         if revista.title.strip().lower() == nombre_revista.strip().lower():
             return render_template('revista.html', revista=revista.to_dict())
