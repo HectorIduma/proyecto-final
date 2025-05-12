@@ -1,45 +1,36 @@
 {% extends "base.html" %}
-
-{% block title %}Resultados de la Búsqueda{% endblock %}
+{% block title %}Buscar Revistas{% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <h2>Resultados de la búsqueda</h2>
-    
-    <form action="/buscar" method="get">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar revista" name="query" value="{{ query }}">
-            <button class="btn btn-primary" type="submit">Buscar</button>
-        </div>
+<div class="container py-5">
+    <h1 class="mb-4">Buscar Revistas</h1>
+
+    <form class="d-flex mb-4" id="searchForm" method="get" action="/buscar">
+        <input class="form-control me-2" type="search" placeholder="Buscar por título" aria-label="Search" name="q" value="{{ query }}">
+        <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
 
-    {% if query %}
-        <h4>Resultados para: "{{ query }}"</h4>
-    {% endif %}
-    
-    {% if resultados %}
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>H-Index</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for revista in resultados %}
-            <tr>
-                <td>
-                    <a href="{{ url_for('revista', titulo=revista['title'] | replace(" ", "-") | lower) }}">
-                        {{ revista['title'] }}
-                    </a>
-                </td>
-                <td>{{ revista['h_index'] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <p>No se encontraron resultados para la búsqueda.</p>
+    {% if revistas %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Título</th>
+                        <th>H-index</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for revista in revistas %}
+                    <tr>
+                        <td><a href="/revista/{{ revista['title'] }}">{{ revista['title'] }}</a></td>
+                        <td>{{ revista['h_index'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif query %}
+        <div class="alert alert-warning">No se encontraron resultados para "{{ query }}"</div>
     {% endif %}
 </div>
 {% endblock %}
