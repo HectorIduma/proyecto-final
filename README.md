@@ -26,17 +26,31 @@ La aplicación permite a los usuarios consultar información de diversas revista
 ## Estructura del proyecto
 
 ```
-proyecto-final/
-├── public/              # Archivos estáticos (CSS, imágenes)
-│   ├── css/             # Hojas de estilo
-│   └── img/             # Imágenes
-├── views/               # Plantillas HTML
-├── data/                # Archivos JSON de revistas
-├── scripts/             # Scripts de Python
-├── web_scrapper/        # Componentes del web scrapper
-├── app.py               # Punto de entrada de la aplicación
-├── requirements.txt     # Dependencias del proyecto
-└── README.md            # Este archivo
+PROYECTO-FINAL/ │ 
+├── pycache/ 
+│ ├── revista_clases.cpython-312.pyc │
+  └── revista_clases.cpython-313.pyc │ 
+├── datos/ │
+ ├── csv/ │
+ └── json/ │
+├── templates/ │
+   ├── area.html │
+   ├── base.html │
+   ├── buscar.html │
+   ├── catalogo.html │
+   ├── creditos.html │
+   ├── explorar.html │
+   ├── index.html │
+   ├── revista.html │
+   ├── revistas_por_area.html │
+   └── revistas_por_letra.html │
+├── app.py
+├── app2.py
+├── README.md
+├── revista_clases.py
+├── Scimago.json(JSON Usado para pruebas)
+├── search_page.html
+└── web_Scrapper.py
 ```
 
 ## Requisitos previos
@@ -71,6 +85,8 @@ proyecto-final/
 5. Inicia la aplicación:
    ```
    python app2.py
+   (Actualmente el programa cuenta con 11900 revistas, si se quiere seguir generando, se ejecuta el
+   archivo web_Scrapper)
    ```
 
 6. Abre tu navegador y visita `http://localhost:5000`
