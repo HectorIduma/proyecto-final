@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Revistas que empiezan con {{ letra }}{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Revistas que empiezan con "{{ letra }}"</h2>
+    {% if revistas %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revista in revistas %}
+            <tr>
+                <td>{{ revista.title }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No se encontraron revistas con esa letra.</p>
+    {% endif %}
+</div>
+{% endblock %}

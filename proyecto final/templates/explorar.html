@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Explorar Revistas{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <h2>Explorar por letra</h2>
+    <div>
+        {% for letra in letras %}
+            <a href="{{ url_for('explorar_por_letra', letra=letra) }}" class="btn btn-outline-primary m-1">{{ letra }}</a>
+        {% endfor %}
+    </div>    
+</div>
+{% endblock %}
