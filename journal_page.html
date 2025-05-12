@@ -3,7 +3,7 @@
   <head>
  <meta charset="UTF-8">
  
-  <title>Metallurgical and Materials Transactions A: Physical Metallurgy and Materials Science</title>
+  <title>Topics in Catalysis</title>
   <meta name="viewport" content="width=device-width, user-scalable=no" />  
   
  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />
@@ -743,7 +743,7 @@
 
 
         //var datasjr="Year;SJR\n1999;0.499\n2000;0.165\n2001;0.162\n2002;0.123\n2003;0.109\n2004;0.134\n2005;0.217\n2006;0.15\n2007;0.352\n2008;0.182\n2009;0.294\n2010;0.771\n2011;0.188\n2012;0.439\n2013;0.475";
-        var datasjr = "Year;SJR\n1999;1.991\n2000;1.846\n2001;1.847\n2002;1.858\n2003;1.478\n2004;1.432\n2005;1.291\n2006;1.394\n2007;1.319\n2008;1.498\n2009;1.634\n2010;1.674\n2011;1.498\n2012;1.426\n2013;1.513\n2014;1.659\n2015;1.267\n2016;1.206\n2017;1.093\n2018;0.970\n2019;0.906\n2020;0.862\n2021;0.858\n2022;0.770\n2023;0.761\n2024;0.713";
+        var datasjr = "Year;SJR\n1999;1.274\n2000;2.461\n2001;1.443\n2002;1.226\n2003;1.330\n2004;1.365\n2005;1.466\n2006;1.603\n2007;1.542\n2008;1.250\n2009;1.285\n2010;1.506\n2011;1.338\n2012;1.196\n2013;1.119\n2014;0.987\n2015;0.926\n2016;0.975\n2017;0.965\n2018;0.736\n2019;0.727\n2020;0.732\n2021;0.735\n2022;0.624\n2023;0.613\n2024;0.603";
 
         var dssjr=new viz.Dataset({
           data:datasjr,
@@ -755,7 +755,7 @@
         });
 
 
-    var datatotaldocs = "Year;Documents\n1999;369\n2000;342\n2001;364\n2002;432\n2003;294\n2004;383\n2005;342\n2006;335\n2007;319\n2008;335\n2009;335\n2010;356\n2011;427\n2012;519\n2013;585\n2014;612\n2015;582\n2016;616\n2017;562\n2018;580\n2019;521\n2020;556\n2021;425\n2022;350\n2023;368\n2024;383";
+    var datatotaldocs = "Year;Documents\n1999;64\n2000;141\n2001;100\n2002;72\n2003;90\n2004;131\n2005;70\n2006;85\n2007;213\n2008;115\n2009;273\n2010;204\n2011;159\n2012;151\n2013;236\n2014;173\n2015;78\n2016;195\n2017;180\n2018;210\n2019;128\n2020;155\n2021;96\n2022;207\n2023;137\n2024;188";
 
     var dstotaldocs=new viz.Dataset({data:datatotaldocs,datatypes:{'Year':'YYYY'}})
     .done(function () {
@@ -763,7 +763,7 @@
     });   
 
         //var datacitesperdoc="Cites per document;Year;Value\nCites / Doc. (4 years);1999;0.2\nCites / Doc. (4 years);2000;0.15\nCites / Doc. (4 years);2001;0.2\nCites / Doc. (4 years);2002;0.12\nCites / Doc. (4 years);2003;0.09\nCites / Doc. (4 years);2004;0.09\nCites / Doc. (4 years);2005;0.18\nCites / Doc. (4 years);2006;0.1\nCites / Doc. (4 years);2007;0.28\nCites / Doc. (4 years);2008;0.17\nCites / Doc. (4 years);2009;0.39\nCites / Doc. (4 years);2010;0.82\nCites / Doc. (4 years);2011;0.48\nCites / Doc. (4 years);2012;0.55\nCites / Doc. (4 years);2013;0.55\nCites / Doc. (3 years);1999;0.2\nCites / Doc. (3 years);2000;0.17\nCites / Doc. (3 years);2001;0.24\nCites / Doc. (3 years);2002;0.13\nCites / Doc. (3 years);2003;0.06\nCites / Doc. (3 years);2004;0.07\nCites / Doc. (3 years);2005;0.2\nCites / Doc. (3 years);2006;0.11\nCites / Doc. (3 years);2007;0.24\nCites / Doc. (3 years);2008;0.14\nCites / Doc. (3 years);2009;0.37\nCites / Doc. (3 years);2010;0.95\nCites / Doc. (3 years);2011;0.43\nCites / Doc. (3 years);2012;0.6\nCites / Doc. (3 years);2013;0.45\nCites / Doc. (2 years);1999;0.19\nCites / Doc. (2 years);2000;0.23\nCites / Doc. (2 years);2001;0.11\nCites / Doc. (2 years);2002;0.1\nCites / Doc. (2 years);2003;0\nCites / Doc. (2 years);2004;0.09\nCites / Doc. (2 years);2005;0.22\nCites / Doc. (2 years);2006;0.11\nCites / Doc. (2 years);2007;0.23\nCites / Doc. (2 years);2008;0.13\nCites / Doc. (2 years);2009;0.28\nCites / Doc. (2 years);2010;0.86\nCites / Doc. (2 years);2011;0.48\nCites / Doc. (2 years);2012;0.5\nCites / Doc. (2 years);2013;0.49";
-        var datacitesperdoc = "Cites per document;Year;Value\nCites / Doc. (4 years);1999;1.335\nCites / Doc. (4 years);2000;1.498\nCites / Doc. (4 years);2001;1.617\nCites / Doc. (4 years);2002;1.596\nCites / Doc. (4 years);2003;1.622\nCites / Doc. (4 years);2004;1.667\nCites / Doc. (4 years);2005;1.853\nCites / Doc. (4 years);2006;1.717\nCites / Doc. (4 years);2007;1.751\nCites / Doc. (4 years);2008;1.804\nCites / Doc. (4 years);2009;2.089\nCites / Doc. (4 years);2010;2.128\nCites / Doc. (4 years);2011;2.049\nCites / Doc. (4 years);2012;2.213\nCites / Doc. (4 years);2013;2.271\nCites / Doc. (4 years);2014;2.307\nCites / Doc. (4 years);2015;2.265\nCites / Doc. (4 years);2016;2.297\nCites / Doc. (4 years);2017;2.340\nCites / Doc. (4 years);2018;2.366\nCites / Doc. (4 years);2019;2.452\nCites / Doc. (4 years);2020;2.631\nCites / Doc. (4 years);2021;2.707\nCites / Doc. (4 years);2022;2.953\nCites / Doc. (4 years);2023;2.751\nCites / Doc. (4 years);2024;3.064\nCites / Doc. (3 years);1999;1.335\nCites / Doc. (3 years);2000;1.419\nCites / Doc. (3 years);2001;1.680\nCites / Doc. (3 years);2002;1.464\nCites / Doc. (3 years);2003;1.503\nCites / Doc. (3 years);2004;1.647\nCites / Doc. (3 years);2005;1.670\nCites / Doc. (3 years);2006;1.764\nCites / Doc. (3 years);2007;1.688\nCites / Doc. (3 years);2008;1.787\nCites / Doc. (3 years);2009;1.902\nCites / Doc. (3 years);2010;2.061\nCites / Doc. (3 years);2011;1.994\nCites / Doc. (3 years);2012;2.095\nCites / Doc. (3 years);2013;2.154\nCites / Doc. (3 years);2014;2.213\nCites / Doc. (3 years);2015;2.191\nCites / Doc. (3 years);2016;2.210\nCites / Doc. (3 years);2017;2.265\nCites / Doc. (3 years);2018;2.294\nCites / Doc. (3 years);2019;2.356\nCites / Doc. (3 years);2020;2.600\nCites / Doc. (3 years);2021;2.774\nCites / Doc. (3 years);2022;2.854\nCites / Doc. (3 years);2023;2.775\nCites / Doc. (3 years);2024;2.680\nCites / Doc. (2 years);1999;1.191\nCites / Doc. (2 years);2000;1.487\nCites / Doc. (2 years);2001;1.414\nCites / Doc. (2 years);2002;1.354\nCites / Doc. (2 years);2003;1.441\nCites / Doc. (2 years);2004;1.416\nCites / Doc. (2 years);2005;1.527\nCites / Doc. (2 years);2006;1.615\nCites / Doc. (2 years);2007;1.552\nCites / Doc. (2 years);2008;1.595\nCites / Doc. (2 years);2009;1.697\nCites / Doc. (2 years);2010;2.000\nCites / Doc. (2 years);2011;1.847\nCites / Doc. (2 years);2012;1.916\nCites / Doc. (2 years);2013;1.995\nCites / Doc. (2 years);2014;2.041\nCites / Doc. (2 years);2015;2.079\nCites / Doc. (2 years);2016;2.054\nCites / Doc. (2 years);2017;2.083\nCites / Doc. (2 years);2018;2.166\nCites / Doc. (2 years);2019;2.197\nCites / Doc. (2 years);2020;2.627\nCites / Doc. (2 years);2021;2.530\nCites / Doc. (2 years);2022;2.866\nCites / Doc. (2 years);2023;2.265\nCites / Doc. (2 years);2024;2.442";
+        var datacitesperdoc = "Cites per document;Year;Value\nCites / Doc. (4 years);1999;3.384\nCites / Doc. (4 years);2000;3.573\nCites / Doc. (4 years);2001;2.650\nCites / Doc. (4 years);2002;2.196\nCites / Doc. (4 years);2003;2.347\nCites / Doc. (4 years);2004;2.452\nCites / Doc. (4 years);2005;2.784\nCites / Doc. (4 years);2006;2.755\nCites / Doc. (4 years);2007;3.242\nCites / Doc. (4 years);2008;2.673\nCites / Doc. (4 years);2009;2.957\nCites / Doc. (4 years);2010;2.939\nCites / Doc. (4 years);2011;3.173\nCites / Doc. (4 years);2012;2.923\nCites / Doc. (4 years);2013;2.948\nCites / Doc. (4 years);2014;2.895\nCites / Doc. (4 years);2015;2.656\nCites / Doc. (4 years);2016;2.676\nCites / Doc. (4 years);2017;2.532\nCites / Doc. (4 years);2018;2.514\nCites / Doc. (4 years);2019;2.502\nCites / Doc. (4 years);2020;2.743\nCites / Doc. (4 years);2021;2.765\nCites / Doc. (4 years);2022;2.871\nCites / Doc. (4 years);2023;2.945\nCites / Doc. (4 years);2024;3.222\nCites / Doc. (3 years);1999;3.384\nCites / Doc. (3 years);2000;3.959\nCites / Doc. (3 years);2001;2.390\nCites / Doc. (3 years);2002;2.039\nCites / Doc. (3 years);2003;2.201\nCites / Doc. (3 years);2004;2.458\nCites / Doc. (3 years);2005;2.823\nCites / Doc. (3 years);2006;2.780\nCites / Doc. (3 years);2007;3.182\nCites / Doc. (3 years);2008;2.481\nCites / Doc. (3 years);2009;2.867\nCites / Doc. (3 years);2010;2.774\nCites / Doc. (3 years);2011;3.118\nCites / Doc. (3 years);2012;2.728\nCites / Doc. (3 years);2013;2.891\nCites / Doc. (3 years);2014;2.496\nCites / Doc. (3 years);2015;2.621\nCites / Doc. (3 years);2016;2.620\nCites / Doc. (3 years);2017;2.675\nCites / Doc. (3 years);2018;2.298\nCites / Doc. (3 years);2019;2.477\nCites / Doc. (3 years);2020;2.674\nCites / Doc. (3 years);2021;2.803\nCites / Doc. (3 years);2022;2.876\nCites / Doc. (3 years);2023;3.085\nCites / Doc. (3 years);2024;3.139\nCites / Doc. (2 years);1999;3.828\nCites / Doc. (2 years);2000;3.137\nCites / Doc. (2 years);2001;2.141\nCites / Doc. (2 years);2002;1.693\nCites / Doc. (2 years);2003;1.890\nCites / Doc. (2 years);2004;2.321\nCites / Doc. (2 years);2005;2.896\nCites / Doc. (2 years);2006;2.652\nCites / Doc. (2 years);2007;2.594\nCites / Doc. (2 years);2008;2.372\nCites / Doc. (2 years);2009;2.500\nCites / Doc. (2 years);2010;2.564\nCites / Doc. (2 years);2011;2.828\nCites / Doc. (2 years);2012;2.752\nCites / Doc. (2 years);2013;2.358\nCites / Doc. (2 years);2014;2.408\nCites / Doc. (2 years);2015;2.440\nCites / Doc. (2 years);2016;2.845\nCites / Doc. (2 years);2017;2.436\nCites / Doc. (2 years);2018;2.267\nCites / Doc. (2 years);2019;2.338\nCites / Doc. (2 years);2020;2.778\nCites / Doc. (2 years);2021;2.392\nCites / Doc. (2 years);2022;3.072\nCites / Doc. (2 years);2023;2.957\nCites / Doc. (2 years);2024;3.035";
 
         var dscitesperdoc=new viz.Dataset({
           data:datacitesperdoc,
@@ -775,7 +775,7 @@
         });
 
         //var dataquartiles="Category;Year;Quartile\nArts and Humanities (miscellaneous);1999;Q2\nArts and Humanities (miscellaneous);2000;Q3\nArts and Humanities (miscellaneous);2001;Q3\nArts and Humanities (miscellaneous);2002;Q3\nArts and Humanities (miscellaneous);2003;Q3\nArts and Humanities (miscellaneous);2004;Q3\nArts and Humanities (miscellaneous);2005;Q3\nArts and Humanities (miscellaneous);2006;Q3\nArts and Humanities (miscellaneous);2007;Q2\nArts and Humanities (miscellaneous);2008;Q3\nArts and Humanities (miscellaneous);2009;Q2\nArts and Humanities (miscellaneous);2010;Q2\nArts and Humanities (miscellaneous);2011;Q3\nArts and Humanities (miscellaneous);2012;Q2\nArts and Humanities (miscellaneous);2013;Q2\nBuilding and Construction;1999;Q1\nBuilding and Construction;2000;Q3\nBuilding and Construction;2001;Q2\nBuilding and Construction;2002;Q4\nBuilding and Construction;2003;Q4\nBuilding and Construction;2004;Q2\nBuilding and Construction;2005;Q2\nBuilding and Construction;2006;Q3\nBuilding and Construction;2007;Q3\nBuilding and Construction;2008;Q2\nBuilding and Construction;2009;Q3\nBuilding and Construction;2010;Q4\nBuilding and Construction;2011;Q3\nBuilding and Construction;2012;Q2\nBuilding and Construction;2013;Q1\nCivil and Structural Engineering;1999;Q1\nCivil and Structural Engineering;2000;Q2\nCivil and Structural Engineering;2001;Q2\nCivil and Structural Engineering;2002;Q1\nCivil and Structural Engineering;2003;Q2\nCivil and Structural Engineering;2004;Q3\nCivil and Structural Engineering;2005;Q3\nCivil and Structural Engineering;2006;Q4\nCivil and Structural Engineering;2007;Q3\nCivil and Structural Engineering;2008;Q2\nCivil and Structural Engineering;2009;Q2\nCivil and Structural Engineering;2010;Q2\nCivil and Structural Engineering;2011;Q1\nCivil and Structural Engineering;2012;Q2\nCivil and Structural Engineering;2013;Q1\nMechanical Engineering;1999;Q4\nMechanical Engineering;2000;Q4\nMechanical Engineering;2001;Q3\nMechanical Engineering;2002;Q3\nMechanical Engineering;2003;Q2\nMechanical Engineering;2004;Q2\nMechanical Engineering;2005;Q3\nMechanical Engineering;2006;Q3\nMechanical Engineering;2007;Q3\nMechanical Engineering;2008;Q2\nMechanical Engineering;2009;Q2\nMechanical Engineering;2010;Q3\nMechanical Engineering;2011;Q3\nMechanical Engineering;2012;Q2\nMechanical Engineering;2013;Q2";
-        var dataquartiles = "Category;Year;Quartile\nCondensed Matter Physics;1999;Q1\nCondensed Matter Physics;2000;Q1\nCondensed Matter Physics;2001;Q1\nCondensed Matter Physics;2002;Q1\nCondensed Matter Physics;2003;Q1\nCondensed Matter Physics;2004;Q1\nCondensed Matter Physics;2005;Q1\nCondensed Matter Physics;2006;Q1\nCondensed Matter Physics;2007;Q1\nCondensed Matter Physics;2008;Q1\nCondensed Matter Physics;2009;Q1\nCondensed Matter Physics;2010;Q1\nCondensed Matter Physics;2011;Q1\nCondensed Matter Physics;2012;Q1\nCondensed Matter Physics;2013;Q1\nCondensed Matter Physics;2014;Q1\nCondensed Matter Physics;2015;Q1\nCondensed Matter Physics;2016;Q1\nCondensed Matter Physics;2017;Q1\nCondensed Matter Physics;2018;Q1\nCondensed Matter Physics;2019;Q1\nCondensed Matter Physics;2020;Q1\nCondensed Matter Physics;2021;Q1\nCondensed Matter Physics;2022;Q1\nCondensed Matter Physics;2023;Q1\nCondensed Matter Physics;2024;Q2\nMechanics of Materials;1999;Q1\nMechanics of Materials;2000;Q1\nMechanics of Materials;2001;Q1\nMechanics of Materials;2002;Q1\nMechanics of Materials;2003;Q1\nMechanics of Materials;2004;Q1\nMechanics of Materials;2005;Q1\nMechanics of Materials;2006;Q1\nMechanics of Materials;2007;Q1\nMechanics of Materials;2008;Q1\nMechanics of Materials;2009;Q1\nMechanics of Materials;2010;Q1\nMechanics of Materials;2011;Q1\nMechanics of Materials;2012;Q1\nMechanics of Materials;2013;Q1\nMechanics of Materials;2014;Q1\nMechanics of Materials;2015;Q1\nMechanics of Materials;2016;Q1\nMechanics of Materials;2017;Q1\nMechanics of Materials;2018;Q1\nMechanics of Materials;2019;Q1\nMechanics of Materials;2020;Q1\nMechanics of Materials;2021;Q1\nMechanics of Materials;2022;Q1\nMechanics of Materials;2023;Q1\nMechanics of Materials;2024;Q2\nMetals and Alloys;1999;Q1\nMetals and Alloys;2000;Q1\nMetals and Alloys;2001;Q1\nMetals and Alloys;2002;Q1\nMetals and Alloys;2003;Q1\nMetals and Alloys;2004;Q1\nMetals and Alloys;2005;Q1\nMetals and Alloys;2006;Q1\nMetals and Alloys;2007;Q1\nMetals and Alloys;2008;Q1\nMetals and Alloys;2009;Q1\nMetals and Alloys;2010;Q1\nMetals and Alloys;2011;Q1\nMetals and Alloys;2012;Q1\nMetals and Alloys;2013;Q1\nMetals and Alloys;2014;Q1\nMetals and Alloys;2015;Q1\nMetals and Alloys;2016;Q1\nMetals and Alloys;2017;Q1\nMetals and Alloys;2018;Q1\nMetals and Alloys;2019;Q1\nMetals and Alloys;2020;Q1\nMetals and Alloys;2021;Q1\nMetals and Alloys;2022;Q1\nMetals and Alloys;2023;Q1\nMetals and Alloys;2024;Q1";
+        var dataquartiles = "Category;Year;Quartile\nCatalysis;1999;Q2\nCatalysis;2000;Q1\nCatalysis;2001;Q2\nCatalysis;2002;Q2\nCatalysis;2003;Q2\nCatalysis;2004;Q2\nCatalysis;2005;Q2\nCatalysis;2006;Q2\nCatalysis;2007;Q2\nCatalysis;2008;Q2\nCatalysis;2009;Q2\nCatalysis;2010;Q2\nCatalysis;2011;Q2\nCatalysis;2012;Q2\nCatalysis;2013;Q2\nCatalysis;2014;Q2\nCatalysis;2015;Q2\nCatalysis;2016;Q2\nCatalysis;2017;Q2\nCatalysis;2018;Q3\nCatalysis;2019;Q2\nCatalysis;2020;Q3\nCatalysis;2021;Q2\nCatalysis;2022;Q3\nCatalysis;2023;Q3\nCatalysis;2024;Q3\nChemistry (miscellaneous);1999;Q1\nChemistry (miscellaneous);2000;Q1\nChemistry (miscellaneous);2001;Q1\nChemistry (miscellaneous);2002;Q1\nChemistry (miscellaneous);2003;Q1\nChemistry (miscellaneous);2004;Q1\nChemistry (miscellaneous);2005;Q1\nChemistry (miscellaneous);2006;Q1\nChemistry (miscellaneous);2007;Q1\nChemistry (miscellaneous);2008;Q1\nChemistry (miscellaneous);2009;Q1\nChemistry (miscellaneous);2010;Q1\nChemistry (miscellaneous);2011;Q1\nChemistry (miscellaneous);2012;Q1\nChemistry (miscellaneous);2013;Q1\nChemistry (miscellaneous);2014;Q1\nChemistry (miscellaneous);2015;Q1\nChemistry (miscellaneous);2016;Q1\nChemistry (miscellaneous);2017;Q1\nChemistry (miscellaneous);2018;Q1\nChemistry (miscellaneous);2019;Q1\nChemistry (miscellaneous);2020;Q2\nChemistry (miscellaneous);2021;Q1\nChemistry (miscellaneous);2022;Q2\nChemistry (miscellaneous);2023;Q2\nChemistry (miscellaneous);2024;Q2";
         
         var dsquartiles=new viz.Dataset({data:dataquartiles,datatypes:{'Year':'YYYY'}})
           .done(function () {
@@ -783,7 +783,7 @@
           }); 
                 
         //var datacitesselfcites="Cites;Year;Value\nSelf Cites;1999;1\nSelf Cites;2000;2\nSelf Cites;2001;1\nSelf Cites;2002;3\nSelf Cites;2003;0\nSelf Cites;2004;0\nSelf Cites;2005;8\nSelf Cites;2006;3\nSelf Cites;2007;4\nSelf Cites;2008;3\nSelf Cites;2009;1\nSelf Cites;2010;10\nSelf Cites;2011;3\nSelf Cites;2012;15\nSelf Cites;2013;4\nExternal Cites;1999;10\nExternal Cites;2000;7\nExternal Cites;2001;12\nExternal Cites;2002;3\nExternal Cites;2003;3\nExternal Cites;2004;3\nExternal Cites;2005;3\nExternal Cites;2006;3\nExternal Cites;2007;11\nExternal Cites;2008;6\nExternal Cites;2009;23\nExternal Cites;2010;43\nExternal Cites;2011;25\nExternal Cites;2012;29\nExternal Cites;2013;35\n";
-        var datacitesselfcites = "Cites;Year;Value\nSelf Cites;1999;208\nSelf Cites;2000;203\nSelf Cites;2001;265\nSelf Cites;2002;189\nSelf Cites;2003;138\nSelf Cites;2004;200\nSelf Cites;2005;196\nSelf Cites;2006;196\nSelf Cites;2007;156\nSelf Cites;2008;153\nSelf Cites;2009;156\nSelf Cites;2010;171\nSelf Cites;2011;175\nSelf Cites;2012;251\nSelf Cites;2013;336\nSelf Cites;2014;334\nSelf Cites;2015;367\nSelf Cites;2016;408\nSelf Cites;2017;339\nSelf Cites;2018;358\nSelf Cites;2019;311\nSelf Cites;2020;431\nSelf Cites;2021;294\nSelf Cites;2022;251\nSelf Cites;2023;191\nSelf Cites;2024;171\nTotal Cites;1999;1399\nTotal Cites;2000;1401\nTotal Cites;2001;1724\nTotal Cites;2002;1574\nTotal Cites;2003;1710\nTotal Cites;2004;1795\nTotal Cites;2005;1852\nTotal Cites;2006;1798\nTotal Cites;2007;1789\nTotal Cites;2008;1780\nTotal Cites;2009;1881\nTotal Cites;2010;2038\nTotal Cites;2011;2046\nTotal Cites;2012;2342\nTotal Cites;2013;2805\nTotal Cites;2014;3388\nTotal Cites;2015;3760\nTotal Cites;2016;3932\nTotal Cites;2017;4099\nTotal Cites;2018;4037\nTotal Cites;2019;4142\nTotal Cites;2020;4323\nTotal Cites;2021;4597\nTotal Cites;2022;4286\nTotal Cites;2023;3694\nTotal Cites;2024;3063";
+        var datacitesselfcites = "Cites;Year;Value\nSelf Cites;1999;8\nSelf Cites;2000;7\nSelf Cites;2001;10\nSelf Cites;2002;37\nSelf Cites;2003;33\nSelf Cites;2004;51\nSelf Cites;2005;14\nSelf Cites;2006;44\nSelf Cites;2007;58\nSelf Cites;2008;36\nSelf Cites;2009;53\nSelf Cites;2010;54\nSelf Cites;2011;37\nSelf Cites;2012;32\nSelf Cites;2013;34\nSelf Cites;2014;43\nSelf Cites;2015;14\nSelf Cites;2016;62\nSelf Cites;2017;24\nSelf Cites;2018;22\nSelf Cites;2019;47\nSelf Cites;2020;29\nSelf Cites;2021;10\nSelf Cites;2022;23\nSelf Cites;2023;21\nSelf Cites;2024;28\nTotal Cites;1999;291\nTotal Cites;2000;483\nTotal Cites;2001;564\nTotal Cites;2002;622\nTotal Cites;2003;689\nTotal Cites;2004;644\nTotal Cites;2005;827\nTotal Cites;2006;809\nTotal Cites;2007;910\nTotal Cites;2008;913\nTotal Cites;2009;1184\nTotal Cites;2010;1667\nTotal Cites;2011;1846\nTotal Cites;2012;1735\nTotal Cites;2013;1486\nTotal Cites;2014;1363\nTotal Cites;2015;1468\nTotal Cites;2016;1276\nTotal Cites;2017;1193\nTotal Cites;2018;1041\nTotal Cites;2019;1449\nTotal Cites;2020;1385\nTotal Cites;2021;1382\nTotal Cites;2022;1090\nTotal Cites;2023;1413\nTotal Cites;2024;1381";
 
         var dscitesselfcites=new viz.Dataset({data:datacitesselfcites,datatypes:{'Year':'YYYY'}})
           .done(function () {
@@ -792,7 +792,7 @@
           });
 
         //var dataextcitesperdoc="Cites;Year;Value\nExternal Cites per document;1999;0.18\nExternal Cites per document;2000;0.13\nExternal Cites per document;2001;0.21\nExternal Cites per document;2002;0.06\nExternal Cites per document;2003;0.06\nExternal Cites per document;2004;0.06\nExternal Cites per document;2005;0.05\nExternal Cites per document;2006;0.054\nExternal Cites per document;2007;0.16\nExternal Cites per document;2008;0.08\nExternal Cites per document;2009;0.32\nExternal Cites per document;2010;0.71\nExternal Cites per document;2011;0.35\nExternal Cites per document;2012;0.36\nExternal Cites per document;2013;0.37\nCites per document;1999;0.2\nCites per document;2000;0.17\nCites per document;2001;0.24\nCites per document;2002;0.13\nCites per document;2003;0.06\nCites per document;2004;0.07\nCites per document;2005;0.2\nCites per document;2006;0.11\nCites per document;2007;0.24\nCites per document;2008;0.14\nCites per document;2009;0.37\nCites per document;2010;0.95\nCites per document;2011;0.43\nCites per document;2012;0.6\nCites per document;2013;0.45";
-    var dataextcitesperdoc = "Cites;Year;Value\nExternal Cites per document;1999;1.136\nExternal Cites per document;2000;1.214\nExternal Cites per document;2001;1.422\nExternal Cites per document;2002;1.288\nExternal Cites per document;2003;1.381\nExternal Cites per document;2004;1.463\nExternal Cites per document;2005;1.493\nExternal Cites per document;2006;1.572\nExternal Cites per document;2007;1.541\nExternal Cites per document;2008;1.634\nExternal Cites per document;2009;1.744\nExternal Cites per document;2010;1.888\nExternal Cites per document;2011;1.824\nExternal Cites per document;2012;1.870\nExternal Cites per document;2013;1.896\nExternal Cites per document;2014;1.995\nExternal Cites per document;2015;1.977\nExternal Cites per document;2016;1.981\nExternal Cites per document;2017;2.077\nExternal Cites per document;2018;2.090\nExternal Cites per document;2019;2.179\nExternal Cites per document;2020;2.340\nExternal Cites per document;2021;2.597\nExternal Cites per document;2022;2.686\nExternal Cites per document;2023;2.632\nExternal Cites per document;2024;2.530\nCites per document;1999;1.335\nCites per document;2000;1.419\nCites per document;2001;1.680\nCites per document;2002;1.464\nCites per document;2003;1.503\nCites per document;2004;1.647\nCites per document;2005;1.670\nCites per document;2006;1.764\nCites per document;2007;1.688\nCites per document;2008;1.787\nCites per document;2009;1.902\nCites per document;2010;2.061\nCites per document;2011;1.994\nCites per document;2012;2.095\nCites per document;2013;2.154\nCites per document;2014;2.213\nCites per document;2015;2.191\nCites per document;2016;2.210\nCites per document;2017;2.265\nCites per document;2018;2.294\nCites per document;2019;2.356\nCites per document;2020;2.600\nCites per document;2021;2.774\nCites per document;2022;2.854\nCites per document;2023;2.775\nCites per document;2024;2.680";
+    var dataextcitesperdoc = "Cites;Year;Value\nExternal Cites per document;1999;3.291\nExternal Cites per document;2000;3.902\nExternal Cites per document;2001;2.347\nExternal Cites per document;2002;1.918\nExternal Cites per document;2003;2.096\nExternal Cites per document;2004;2.263\nExternal Cites per document;2005;2.775\nExternal Cites per document;2006;2.629\nExternal Cites per document;2007;2.979\nExternal Cites per document;2008;2.383\nExternal Cites per document;2009;2.738\nExternal Cites per document;2010;2.684\nExternal Cites per document;2011;3.056\nExternal Cites per document;2012;2.678\nExternal Cites per document;2013;2.825\nExternal Cites per document;2014;2.418\nExternal Cites per document;2015;2.596\nExternal Cites per document;2016;2.493\nExternal Cites per document;2017;2.621\nExternal Cites per document;2018;2.249\nExternal Cites per document;2019;2.397\nExternal Cites per document;2020;2.618\nExternal Cites per document;2021;2.783\nExternal Cites per document;2022;2.815\nExternal Cites per document;2023;3.039\nExternal Cites per document;2024;3.075\nCites per document;1999;3.384\nCites per document;2000;3.959\nCites per document;2001;2.390\nCites per document;2002;2.039\nCites per document;2003;2.201\nCites per document;2004;2.458\nCites per document;2005;2.823\nCites per document;2006;2.780\nCites per document;2007;3.182\nCites per document;2008;2.481\nCites per document;2009;2.867\nCites per document;2010;2.774\nCites per document;2011;3.118\nCites per document;2012;2.728\nCites per document;2013;2.891\nCites per document;2014;2.496\nCites per document;2015;2.621\nCites per document;2016;2.620\nCites per document;2017;2.675\nCites per document;2018;2.298\nCites per document;2019;2.477\nCites per document;2020;2.674\nCites per document;2021;2.803\nCites per document;2022;2.876\nCites per document;2023;3.085\nCites per document;2024;3.139";
          var dsextcitesperdoc=new viz.Dataset({data:dataextcitesperdoc,datatypes:{'Year':'YYYY'}})
           .done(function () {
            new viz.View('svgexternalcitesperdoc', this, settings_extcitesperdoc);
@@ -800,7 +800,7 @@
 
 
           //var datainternationalcollaboration="Year;International Collaboration\n1999;0\n2000;5\n2001;0\n2002;5.88\n2003;17.65\n2004;10\n2005;5.56\n2006;3.57\n2007;4.55\n2008;25\n2009;16.67\n2010;9.38\n2011;20.69\n2012;15.63\n2013;13.33";
-          var datainternationalcollaboration = "Year;International Collaboration\n1999;19.78\n2000;27.49\n2001;25.00\n2002;23.84\n2003;24.49\n2004;27.94\n2005;29.53\n2006;33.73\n2007;26.33\n2008;29.55\n2009;24.18\n2010;24.16\n2011;26.23\n2012;30.06\n2013;30.60\n2014;28.76\n2015;34.88\n2016;28.41\n2017;26.33\n2018;28.97\n2019;29.94\n2020;31.12\n2021;26.12\n2022;26.86\n2023;25.27\n2024;27.94";
+          var datainternationalcollaboration = "Year;International Collaboration\n1999;17.19\n2000;16.31\n2001;23.00\n2002;22.22\n2003;23.33\n2004;14.50\n2005;18.57\n2006;24.71\n2007;23.47\n2008;26.09\n2009;21.25\n2010;15.20\n2011;25.79\n2012;18.54\n2013;28.81\n2014;27.17\n2015;28.21\n2016;30.26\n2017;26.11\n2018;30.95\n2019;28.91\n2020;32.26\n2021;35.42\n2022;29.47\n2023;39.42\n2024;40.96";
 
           var dsinternationalcollaboration=new viz.Dataset({data:datainternationalcollaboration,datatypes:{'Year':'YYYY'}})
             .done(function () {
@@ -808,7 +808,7 @@
             });
 
           //var datacitabledocuments="Documents;Year;Value\nNon-citable documents;1999;0\nNon-citable documents;2000;0\nNon-citable documents;2001;1\nNon-citable documents;2002;1\nNon-citable documents;2003;1\nNon-citable documents;2004;0\nNon-citable documents;2005;0\nNon-citable documents;2006;1\nNon-citable documents;2007;3\nNon-citable documents;2008;5\nNon-citable documents;2009;5\nNon-citable documents;2010;4\nNon-citable documents;2011;5\nNon-citable documents;2012;6\nNon-citable documents;2013;7\nCitable documents;1999;55\nCitable documents;2000;52\nCitable documents;2001;54\nCitable documents;2002;47\nCitable documents;2003;48\nCitable documents;2004;46\nCitable documents;2005;54\nCitable documents;2006;54\nCitable documents;2007;63\nCitable documents;2008;63\nCitable documents;2009;65\nCitable documents;2010;56\nCitable documents;2011;65\nCitable documents;2012;73\nCitable documents;2013;86";
-          var datacitabledocuments = "Documents;Year;Value\nNon-citable documents;1999;2\nNon-citable documents;2000;0\nNon-citable documents;2001;1\nNon-citable documents;2002;6\nNon-citable documents;2003;14\nNon-citable documents;2004;18\nNon-citable documents;2005;17\nNon-citable documents;2006;14\nNon-citable documents;2007;15\nNon-citable documents;2008;17\nNon-citable documents;2009;17\nNon-citable documents;2010;19\nNon-citable documents;2011;22\nNon-citable documents;2012;28\nNon-citable documents;2013;27\nNon-citable documents;2014;30\nNon-citable documents;2015;29\nNon-citable documents;2016;30\nNon-citable documents;2017;25\nNon-citable documents;2018;19\nNon-citable documents;2019;13\nNon-citable documents;2020;10\nNon-citable documents;2021;7\nNon-citable documents;2022;6\nNon-citable documents;2023;2\nNon-citable documents;2024;3\nCitable documents;1999;1046\nCitable documents;2000;987\nCitable documents;2001;1025\nCitable documents;2002;1069\nCitable documents;2003;1124\nCitable documents;2004;1072\nCitable documents;2005;1092\nCitable documents;2006;1005\nCitable documents;2007;1045\nCitable documents;2008;979\nCitable documents;2009;972\nCitable documents;2010;970\nCitable documents;2011;1004\nCitable documents;2012;1090\nCitable documents;2013;1275\nCitable documents;2014;1501\nCitable documents;2015;1687\nCitable documents;2016;1749\nCitable documents;2017;1785\nCitable documents;2018;1741\nCitable documents;2019;1745\nCitable documents;2020;1653\nCitable documents;2021;1650\nCitable documents;2022;1496\nCitable documents;2023;1329\nCitable documents;2024;1140";
+          var datacitabledocuments = "Documents;Year;Value\nNon-citable documents;1999;0\nNon-citable documents;2000;2\nNon-citable documents;2001;2\nNon-citable documents;2002;2\nNon-citable documents;2003;2\nNon-citable documents;2004;2\nNon-citable documents;2005;3\nNon-citable documents;2006;1\nNon-citable documents;2007;2\nNon-citable documents;2008;1\nNon-citable documents;2009;6\nNon-citable documents;2010;16\nNon-citable documents;2011;24\nNon-citable documents;2012;25\nNon-citable documents;2013;22\nNon-citable documents;2014;20\nNon-citable documents;2015;20\nNon-citable documents;2016;15\nNon-citable documents;2017;17\nNon-citable documents;2018;18\nNon-citable documents;2019;25\nNon-citable documents;2020;22\nNon-citable documents;2021;22\nNon-citable documents;2022;19\nNon-citable documents;2023;21\nNon-citable documents;2024;21\nCitable documents;1999;86\nCitable documents;2000;120\nCitable documents;2001;234\nCitable documents;2002;303\nCitable documents;2003;311\nCitable documents;2004;260\nCitable documents;2005;290\nCitable documents;2006;290\nCitable documents;2007;284\nCitable documents;2008;367\nCitable documents;2009;407\nCitable documents;2010;585\nCitable documents;2011;568\nCitable documents;2012;611\nCitable documents;2013;492\nCitable documents;2014;526\nCitable documents;2015;540\nCitable documents;2016;472\nCitable documents;2017;429\nCitable documents;2018;435\nCitable documents;2019;560\nCitable documents;2020;496\nCitable documents;2021;471\nCitable documents;2022;360\nCitable documents;2023;437\nCitable documents;2024;419";
 
           var dscitable=new viz.Dataset({data:datacitabledocuments,datatypes:{'Year':'YYYY'}})
             .done(function () {
@@ -816,38 +816,38 @@
             });
 
           //var datauncited="Documents;Year;Value\nUncited documents;1999;47\nUncited documents;2000;45\nUncited documents;2001;48\nUncited documents;2002;42\nUncited documents;2003;46\nUncited documents;2004;43\nUncited documents;2005;45\nUncited documents;2006;49\nUncited documents;2007;54\nUncited documents;2008;60\nUncited documents;2009;55\nUncited documents;2010;33\nUncited documents;2011;50\nUncited documents;2012;51\nUncited documents;2013;67\nCited documents;1999;8\nCited documents;2000;7\nCited documents;2001;7\nCited documents;2002;6\nCited documents;2003;3\nCited documents;2004;3\nCited documents;2005;9\nCited documents;2006;6\nCited documents;2007;12\nCited documents;2008;8\nCited documents;2009;15\nCited documents;2010;27\nCited documents;2011;20\nCited documents;2012;28\nCited documents;2013;26";
-      var datauncited = "Documents;Year;Value\nUncited documents;1999;458\nUncited documents;2000;433\nUncited documents;2001;429\nUncited documents;2002;477\nUncited documents;2003;511\nUncited documents;2004;428\nUncited documents;2005;412\nUncited documents;2006;362\nUncited documents;2007;403\nUncited documents;2008;334\nUncited documents;2009;331\nUncited documents;2010;298\nUncited documents;2011;315\nUncited documents;2012;350\nUncited documents;2013;404\nUncited documents;2014;450\nUncited documents;2015;471\nUncited documents;2016;487\nUncited documents;2017;463\nUncited documents;2018;455\nUncited documents;2019;426\nUncited documents;2020;366\nUncited documents;2021;345\nUncited documents;2022;313\nUncited documents;2023;303\nUncited documents;2024;242\nCited documents;1999;590\nCited documents;2000;554\nCited documents;2001;597\nCited documents;2002;598\nCited documents;2003;627\nCited documents;2004;662\nCited documents;2005;697\nCited documents;2006;657\nCited documents;2007;657\nCited documents;2008;662\nCited documents;2009;658\nCited documents;2010;691\nCited documents;2011;711\nCited documents;2012;768\nCited documents;2013;898\nCited documents;2014;1081\nCited documents;2015;1245\nCited documents;2016;1292\nCited documents;2017;1347\nCited documents;2018;1305\nCited documents;2019;1332\nCited documents;2020;1297\nCited documents;2021;1312\nCited documents;2022;1189\nCited documents;2023;1028\nCited documents;2024;901";
+      var datauncited = "Documents;Year;Value\nUncited documents;1999;14\nUncited documents;2000;18\nUncited documents;2001;59\nUncited documents;2002;97\nUncited documents;2003;94\nUncited documents;2004;77\nUncited documents;2005;63\nUncited documents;2006;65\nUncited documents;2007;62\nUncited documents;2008;117\nUncited documents;2009;107\nUncited documents;2010;149\nUncited documents;2011;134\nUncited documents;2012;178\nUncited documents;2013;126\nUncited documents;2014;137\nUncited documents;2015;146\nUncited documents;2016;126\nUncited documents;2017;98\nUncited documents;2018;115\nUncited documents;2019;142\nUncited documents;2020;120\nUncited documents;2021;114\nUncited documents;2022;88\nUncited documents;2023;111\nUncited documents;2024;98\nCited documents;1999;72\nCited documents;2000;104\nCited documents;2001;177\nCited documents;2002;208\nCited documents;2003;219\nCited documents;2004;185\nCited documents;2005;230\nCited documents;2006;226\nCited documents;2007;224\nCited documents;2008;251\nCited documents;2009;306\nCited documents;2010;452\nCited documents;2011;458\nCited documents;2012;458\nCited documents;2013;388\nCited documents;2014;409\nCited documents;2015;414\nCited documents;2016;361\nCited documents;2017;348\nCited documents;2018;338\nCited documents;2019;443\nCited documents;2020;398\nCited documents;2021;379\nCited documents;2022;291\nCited documents;2023;347\nCited documents;2024;342";
         
           var dsuncited=new viz.Dataset({data:datauncited,datatypes:{'Year':'YYYY'}})
             .done(function () {
               new viz.View('svguncited',this,settings_uncited);
             })
                
-          var datafemale = "Year;Female Percent\n1999;11.81\n2000;11.74\n2001;11.96\n2002;13.53\n2003;14.89\n2004;12.71\n2005;12.38\n2006;14.74\n2007;12.91\n2008;18.75\n2009;16.40\n2010;15.59\n2011;15.81\n2012;18.37\n2013;18.03\n2014;18.08\n2015;18.59\n2016;21.23\n2017;21.06\n2018;20.86\n2019;21.94\n2020;23.05\n2021;22.62\n2022;21.70\n2023;22.61\n2024;24.18";
+          var datafemale = "Year;Female Percent\n1999;11.03\n2000;21.05\n2001;18.95\n2002;20.64\n2003;16.79\n2004;20.77\n2005;20.23\n2006;25.47\n2007;25.04\n2008;24.63\n2009;23.14\n2010;21.48\n2011;30.03\n2012;25.43\n2013;27.48\n2014;23.63\n2015;28.08\n2016;28.68\n2017;29.18\n2018;27.72\n2019;31.55\n2020;30.39\n2021;33.95\n2022;39.07\n2023;33.86\n2024;39.46";
           var dsdatafemale=new viz.Dataset({data:datafemale,datatypes:{'Year':'YYYY'}})
             .done(function () {
               new viz.View('svgfemale', this, settings_female);
             });
 
-         var dataoverton = "Documents;Year;Value\nOverton;1999;6\nOverton;2000;5\nOverton;2001;11\nOverton;2002;6\nOverton;2003;5\nOverton;2004;4\nOverton;2005;3\nOverton;2006;2\nOverton;2007;5\nOverton;2008;9\nOverton;2009;9\nOverton;2010;5\nOverton;2011;9\nOverton;2012;11\nOverton;2013;5\nOverton;2014;9\nOverton;2015;9\nOverton;2016;7\nOverton;2017;5\nOverton;2018;6\nOverton;2019;0\nOverton;2020;0\nOverton;2021;0\nOverton;2022;1\nOverton;2023;0\nOverton;2024;0";
+         var dataoverton = "Documents;Year;Value\nOverton;1999;0\nOverton;2000;0\nOverton;2001;0\nOverton;2002;0\nOverton;2003;0\nOverton;2004;4\nOverton;2005;1\nOverton;2006;0\nOverton;2007;3\nOverton;2008;0\nOverton;2009;6\nOverton;2010;1\nOverton;2011;3\nOverton;2012;0\nOverton;2013;4\nOverton;2014;3\nOverton;2015;0\nOverton;2016;6\nOverton;2017;1\nOverton;2018;0\nOverton;2019;0\nOverton;2020;0\nOverton;2021;1\nOverton;2022;0\nOverton;2023;0\nOverton;2024;0";
          var dsoverton=new viz.Dataset({data:dataoverton,datatypes:{'Year':'YYYY'}})
           .done(function () {
            new viz.View('svgoverton', this, settings_overton);
           });
 
-         var datasdg = "Documents;Year;Value\nSDG;2018;27\nSDG;2019;32\nSDG;2020;54\nSDG;2021;37\nSDG;2022;35\nSDG;2023;44\nSDG;2024;43";
+         var datasdg = "Documents;Year;Value\nSDG;2018;41\nSDG;2019;28\nSDG;2020;33\nSDG;2021;39\nSDG;2022;52\nSDG;2023;51\nSDG;2024;89";
          var dssdg=new viz.Dataset({data:datasdg,datatypes:{'Year':'YYYY'}})
           .done(function () {
            new viz.View('svgsdg', this, settings_sdg);
           });
 
-         var dataapc = "Year;Est. APC (USD)\n1999;3780\n2000;3754\n2001;3746\n2002;3742\n2003;3712\n2004;3668\n2005;3623\n2006;3584\n2007;3534\n2008;3536\n2009;3555\n2010;3589\n2011;3598\n2012;3608\n2013;3609\n2014;3611\n2015;3575\n2016;3549\n2017;3517\n2018;3463\n2019;3382\n2020;3334\n2021;3290\n2022;3247\n2023;3218\n2024;3190";
+         var dataapc = "Year;Est. APC (USD)\n1999;3481\n2000;3736\n2001;3682\n2002;3631\n2003;3608\n2004;3616\n2005;3526\n2006;3541\n2007;3570\n2008;3563\n2009;3556\n2010;3559\n2011;3535\n2012;3502\n2013;3489\n2014;3458\n2015;3396\n2016;3354\n2017;3326\n2018;3277\n2019;3242\n2020;3215\n2021;3179\n2022;3126\n2023;3106\n2024;3085";
          var dsapc=new viz.Dataset({data:dataapc,datatypes:{'Year':'YYYY'}})
           .done(function () {
            new viz.View('svgapc', this, settings_apc);
           });
 
-         var datavalue = "Year;Est. value (USD)\n1999;1394810\n2000;2669240\n2001;4026479\n2002;5639515\n2003;6685034\n2004;6657988\n2005;6575211\n2006;6400135\n2007;5912782\n2008;6060913\n2009;5922457\n2010;6030079\n2011;6376429\n2012;7114379\n2013;8019170\n2014;9024221\n2015;9743191\n2016;10341502\n2017;10401172\n2018;10223947\n2019;9674790\n2020;9451122\n2021;8698782\n2022;7896685\n2023;7143414\n2024;6640892";
+         var datavalue = "Year;Est. value (USD)\n1999;222799\n2000;765798\n2001;1122923\n2002;1368898\n2003;1684955\n2004;1930855\n2005;1632668\n2006;1586534\n2007;2102944\n2008;2187756\n2009;2688195\n2010;3167934\n2011;3407642\n2012;3158467\n2013;3568895\n2014;3192038\n2015;2706365\n2016;2793650\n2017;2866800\n2018;2739535\n2019;2564343\n2020;2790279\n2021;2444926\n2022;2488371\n2023;2245534\n2024;2415434";
          var dsvalue=new viz.Dataset({data:datavalue,datatypes:{'Year':'YYYY'}})
           .done(function () {
            new viz.View('svgvalue', this, settings_value);
@@ -923,7 +923,7 @@
  <!-- end clickio -->
   
   <script type="text/javascript">
-  var id_page_original = 27356;
+  var id_page_original = 21971;
   </script>
   <!-- JS ENCARGADO DE GESTIONAR LOS COMENTARIOS DE SCIMAGOJR EN WORDPRESS -->
   <script src="./js/wp-control-comments.js?2024"></script>
@@ -1245,7 +1245,7 @@
 <div class="background">
   <div class="journaldescription colblock">
   <h1>
-    Metallurgical and Materials Transactions A: Physical Metallurgy and Materials Science  </h1>
+    Topics in Catalysis  </h1>
   
   <div class="journalgrid">
     <div>
@@ -1259,21 +1259,21 @@
    
     <div>
       <h2>Subject Area and Category</h2>
-      <p><ul style="padding-left:0px"><li style="display: inline-block;"><a href="journalrank.php?area=2200" title="view journal rank from Engineering">Engineering</a><ul class="treecategory"><li><a href="journalrank.php?category=2211" title="view journal rank from Mechanics of Materials">Mechanics of Materials</a></li></ul></li></ul><ul style="padding-left:0px"><li style="display: inline-block;"><a href="journalrank.php?area=2500" title="view journal rank from Materials Science">Materials Science</a><ul class="treecategory"><li><a href="journalrank.php?category=2506" title="view journal rank from Metals and Alloys">Metals and Alloys</a></li></ul></li></ul><ul style="padding-left:0px"><li style="display: inline-block;"><a href="journalrank.php?area=3100" title="view journal rank from Physics and Astronomy">Physics and Astronomy</a><ul class="treecategory"><li><a href="journalrank.php?category=3104" title="view journal rank from Condensed Matter Physics">Condensed Matter Physics</a></li></ul></li></ul></p>
+      <p><ul style="padding-left:0px"><li style="display: inline-block;"><a href="journalrank.php?area=1500" title="view journal rank from Chemical Engineering">Chemical Engineering</a><ul class="treecategory"><li><a href="journalrank.php?category=1503" title="view journal rank from Catalysis">Catalysis</a></li></ul></li></ul><ul style="padding-left:0px"><li style="display: inline-block;"><a href="journalrank.php?area=1600" title="view journal rank from Chemistry">Chemistry</a><ul class="treecategory"><li><a href="journalrank.php?category=1601" title="view journal rank from Chemistry (miscellaneous)">Chemistry (miscellaneous)</a></li></ul></li></ul></p>
     </div>
     <div>
     
     <h2>Publisher</h2>
     <p>
-      <a href="journalsearch.php?q=Springer Boston&amp;tip=pub" title="view all publisher's journals">Springer Boston</a>
+      <a href="journalsearch.php?q=Springer&amp;tip=pub" title="view all publisher's journals">Springer</a>
     <br />
           </p>
     </div>
     
     <div>
-      <h2>SJR 2024</h2><p class="hindexnumber">0.713 <span class='Q1' style='font-size: 0.8em' title='best quartile for all subject categories'>Q1</span></p>      
+      <h2>SJR 2024</h2><p class="hindexnumber">0.603 <span class='Q2' style='font-size: 0.8em' title='best quartile for all subject categories'>Q2</span></p>      
       <h2>H-Index</h2>
-      <p class="hindexnumber">196</p>
+      <p class="hindexnumber">126</p>
     </div>
     
     <div>
@@ -1283,21 +1283,20 @@
     
     <div>
       <h2>ISSN</h2>
-      <p>10735623, 15431940</p>
+      <p>10225528, 15729028</p>
     </div>
     
     <div>
       <h2>Coverage</h2>
-      <p>1975-1981, 1983-1987, 1989-2025</p>
+      <p>1994-2025</p>
     </div>
     
     <div>
       
                           
                 <h2>Information</h2>
-                              <p><a href="https://www.springer.com/journal/11661" target="_blank" id="question_journal">Homepage</a></p>
-                              <p><a href="https://mmta.msubmit.net/cgi-bin/main.plex" target="_blank" id="question_journal">How to publish in this journal</a></p>
-                              <p><a href="mailto:mettrans@kwfco.com" target="_blank" id="question_journal">mettrans@kwfco.com</a></p>
+                              <p><a href="http://www.springer.com/chemistry/journal/11244" target="_blank" id="question_journal">Homepage</a></p>
+                              <p><a href="https://www.editorialmanager.com/toca/default.aspx" target="_blank" id="question_journal">How to publish in this journal</a></p>
                               </div>
 
     <div class="blank"></div>
@@ -1305,16 +1304,11 @@
     
     <div class="fullwidth">
           <h2>Scope</h2>
-      Metallurgical and Materials Transactions A is an archival, peer-reviewed, monthly publication that focuses on the latest research in all aspects of metallurgy and materials science. The journal publishes original research and reviews that:
+      Topics in Catalysis publishes topical collections in all fields of catalysis which are composed only of invited articles from leading authors. The journal documents today’s emerging and critical trends in all branches of catalysis. Each themed issue is organized by renowned Guest Editors in collaboration with the Editors-in-Chief.
 
-Advance the basic understanding of the relationships among structure across all length scales, physical and mechanical properties, and processing of materials, examined via theory, experiments, advanced characterization, data-driven and machine learning approaches, and validated modeling.
-Concern the main topics of alloy phases; transformations, transport phenomena, mechanical behavior, physical chemistry, environmental performance, welding and joining, coatings and surface treatment, solidification, and thermomechanical processing.
-Address all classes of metallic materials, composite materials, powder-based alloys, intermetallic compounds, multiprincipal element alloys, nanocrystalline and amorphous materials, and biomaterials.
-There are three classes of articles in the journal:
+The topical collections focus on emerging areas in the catalysis field as well as presenting key research from international meetings in this field. The journal publishes twenty issues per year.
 
-Technical Publications: The journal welcomes complete original work embodying the results of extensive field, plant, laboratory, or theoretical investigation, or new interpretations of existing problems. Materials must be considered to have significant permanent value. In addition to technical acceptability, material should be presented clearly and concisely. Of particular importance is the description of the experimental procedures involved in the experiment. 
-Communications: This class provides more-rapid publication of short items and theoretical or experimental work of immediate current interest.
-Discussions/Replies: These are short discussions of technical publications and communications, which should contribute to the original article by providing confirmation or additional interpretation.        <a class="join_comments_button" href="#wp-comments-response" id="join_conversation"><img src="img/comments_icon_black.png" alt="" />Join the conversation about this journal</a>
+Proposals for new topics are welcome and should be submitted directly to the Editors-in-Chief.        <a class="join_comments_button" href="#wp-comments-response" id="join_conversation"><img src="img/comments_icon_black.png" alt="" />Join the conversation about this journal</a>
     </div>
     
 
@@ -1344,84 +1338,58 @@ Discussions/Replies: These are short discussions of technical publications and c
           The set of journals have been ranked according to their SJR and divided into four equal groups, four quartiles. Q1 (green) comprises the quarter of the journals with the highest values, Q2 (yellow) the second highest values, Q3 (orange) the third highest values and Q4 (red) the lowest values.
           </p>
           <table><thead><tr><th>Category</th><th>Year</th><th>Quartile</th></tr></thead><tbody>
-<tr><td>Condensed Matter Physics</td><td>1999</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2000</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2001</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2002</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2003</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2004</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2005</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2006</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2007</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2008</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2009</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2010</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2011</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2012</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2013</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2014</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2015</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2016</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2017</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2018</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2019</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2020</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2021</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2022</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2023</td><td>Q1</td></tr>
-<tr><td>Condensed Matter Physics</td><td>2024</td><td>Q2</td></tr>
-<tr><td>Mechanics of Materials</td><td>1999</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2000</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2001</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2002</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2003</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2004</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2005</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2006</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2007</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2008</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2009</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2010</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2011</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2012</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2013</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2014</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2015</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2016</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2017</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2018</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2019</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2020</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2021</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2022</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2023</td><td>Q1</td></tr>
-<tr><td>Mechanics of Materials</td><td>2024</td><td>Q2</td></tr>
-<tr><td>Metals and Alloys</td><td>1999</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2000</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2001</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2002</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2003</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2004</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2005</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2006</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2007</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2008</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2009</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2010</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2011</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2012</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2013</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2014</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2015</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2016</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2017</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2018</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2019</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2020</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2021</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2022</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2023</td><td>Q1</td></tr>
-<tr><td>Metals and Alloys</td><td>2024</td><td>Q1</td></tr>
+<tr><td>Catalysis</td><td>1999</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2000</td><td>Q1</td></tr>
+<tr><td>Catalysis</td><td>2001</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2002</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2003</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2004</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2005</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2006</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2007</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2008</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2009</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2010</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2011</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2012</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2013</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2014</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2015</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2016</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2017</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2018</td><td>Q3</td></tr>
+<tr><td>Catalysis</td><td>2019</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2020</td><td>Q3</td></tr>
+<tr><td>Catalysis</td><td>2021</td><td>Q2</td></tr>
+<tr><td>Catalysis</td><td>2022</td><td>Q3</td></tr>
+<tr><td>Catalysis</td><td>2023</td><td>Q3</td></tr>
+<tr><td>Catalysis</td><td>2024</td><td>Q3</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>1999</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2000</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2001</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2002</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2003</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2004</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2005</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2006</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2007</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2008</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2009</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2010</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2011</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2012</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2013</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2014</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2015</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2016</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2017</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2018</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2019</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2020</td><td>Q2</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2021</td><td>Q1</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2022</td><td>Q2</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2023</td><td>Q2</td></tr>
+<tr><td>Chemistry (miscellaneous)</td><td>2024</td><td>Q2</td></tr>
 </tbody></table>        </div>
       </div>
   </div>
@@ -1474,32 +1442,32 @@ Discussions/Replies: These are short discussions of technical publications and c
     It measures the scientific influence of the average article in a journal, it expresses how central to the global scientific discussion an average article of the journal is.
         </p>
          <table><thead><tr><th>Year</th><th>SJR</th></tr></thead><tbody>
-<tr><td>1999</td><td>1.991</td></tr>
-<tr><td>2000</td><td>1.846</td></tr>
-<tr><td>2001</td><td>1.847</td></tr>
-<tr><td>2002</td><td>1.858</td></tr>
-<tr><td>2003</td><td>1.478</td></tr>
-<tr><td>2004</td><td>1.432</td></tr>
-<tr><td>2005</td><td>1.291</td></tr>
-<tr><td>2006</td><td>1.394</td></tr>
-<tr><td>2007</td><td>1.319</td></tr>
-<tr><td>2008</td><td>1.498</td></tr>
-<tr><td>2009</td><td>1.634</td></tr>
-<tr><td>2010</td><td>1.674</td></tr>
-<tr><td>2011</td><td>1.498</td></tr>
-<tr><td>2012</td><td>1.426</td></tr>
-<tr><td>2013</td><td>1.513</td></tr>
-<tr><td>2014</td><td>1.659</td></tr>
-<tr><td>2015</td><td>1.267</td></tr>
-<tr><td>2016</td><td>1.206</td></tr>
-<tr><td>2017</td><td>1.093</td></tr>
-<tr><td>2018</td><td>0.970</td></tr>
-<tr><td>2019</td><td>0.906</td></tr>
-<tr><td>2020</td><td>0.862</td></tr>
-<tr><td>2021</td><td>0.858</td></tr>
-<tr><td>2022</td><td>0.770</td></tr>
-<tr><td>2023</td><td>0.761</td></tr>
-<tr><td>2024</td><td>0.713</td></tr>
+<tr><td>1999</td><td>1.274</td></tr>
+<tr><td>2000</td><td>2.461</td></tr>
+<tr><td>2001</td><td>1.443</td></tr>
+<tr><td>2002</td><td>1.226</td></tr>
+<tr><td>2003</td><td>1.330</td></tr>
+<tr><td>2004</td><td>1.365</td></tr>
+<tr><td>2005</td><td>1.466</td></tr>
+<tr><td>2006</td><td>1.603</td></tr>
+<tr><td>2007</td><td>1.542</td></tr>
+<tr><td>2008</td><td>1.250</td></tr>
+<tr><td>2009</td><td>1.285</td></tr>
+<tr><td>2010</td><td>1.506</td></tr>
+<tr><td>2011</td><td>1.338</td></tr>
+<tr><td>2012</td><td>1.196</td></tr>
+<tr><td>2013</td><td>1.119</td></tr>
+<tr><td>2014</td><td>0.987</td></tr>
+<tr><td>2015</td><td>0.926</td></tr>
+<tr><td>2016</td><td>0.975</td></tr>
+<tr><td>2017</td><td>0.965</td></tr>
+<tr><td>2018</td><td>0.736</td></tr>
+<tr><td>2019</td><td>0.727</td></tr>
+<tr><td>2020</td><td>0.732</td></tr>
+<tr><td>2021</td><td>0.735</td></tr>
+<tr><td>2022</td><td>0.624</td></tr>
+<tr><td>2023</td><td>0.613</td></tr>
+<tr><td>2024</td><td>0.603</td></tr>
 </tbody></table>      </div>
     </div>
       
@@ -1519,32 +1487,32 @@ Discussions/Replies: These are short discussions of technical publications and c
         Evolution of the number of published documents. All types of documents are considered, including citable and non citable documents.
         </p>
          <table><thead><tr><th>Year</th><th>Documents</th></tr></thead><tbody>
-<tr><td>1999</td><td>369</td></tr>
-<tr><td>2000</td><td>342</td></tr>
-<tr><td>2001</td><td>364</td></tr>
-<tr><td>2002</td><td>432</td></tr>
-<tr><td>2003</td><td>294</td></tr>
-<tr><td>2004</td><td>383</td></tr>
-<tr><td>2005</td><td>342</td></tr>
-<tr><td>2006</td><td>335</td></tr>
-<tr><td>2007</td><td>319</td></tr>
-<tr><td>2008</td><td>335</td></tr>
-<tr><td>2009</td><td>335</td></tr>
-<tr><td>2010</td><td>356</td></tr>
-<tr><td>2011</td><td>427</td></tr>
-<tr><td>2012</td><td>519</td></tr>
-<tr><td>2013</td><td>585</td></tr>
-<tr><td>2014</td><td>612</td></tr>
-<tr><td>2015</td><td>582</td></tr>
-<tr><td>2016</td><td>616</td></tr>
-<tr><td>2017</td><td>562</td></tr>
-<tr><td>2018</td><td>580</td></tr>
-<tr><td>2019</td><td>521</td></tr>
-<tr><td>2020</td><td>556</td></tr>
-<tr><td>2021</td><td>425</td></tr>
-<tr><td>2022</td><td>350</td></tr>
-<tr><td>2023</td><td>368</td></tr>
-<tr><td>2024</td><td>383</td></tr>
+<tr><td>1999</td><td>64</td></tr>
+<tr><td>2000</td><td>141</td></tr>
+<tr><td>2001</td><td>100</td></tr>
+<tr><td>2002</td><td>72</td></tr>
+<tr><td>2003</td><td>90</td></tr>
+<tr><td>2004</td><td>131</td></tr>
+<tr><td>2005</td><td>70</td></tr>
+<tr><td>2006</td><td>85</td></tr>
+<tr><td>2007</td><td>213</td></tr>
+<tr><td>2008</td><td>115</td></tr>
+<tr><td>2009</td><td>273</td></tr>
+<tr><td>2010</td><td>204</td></tr>
+<tr><td>2011</td><td>159</td></tr>
+<tr><td>2012</td><td>151</td></tr>
+<tr><td>2013</td><td>236</td></tr>
+<tr><td>2014</td><td>173</td></tr>
+<tr><td>2015</td><td>78</td></tr>
+<tr><td>2016</td><td>195</td></tr>
+<tr><td>2017</td><td>180</td></tr>
+<tr><td>2018</td><td>210</td></tr>
+<tr><td>2019</td><td>128</td></tr>
+<tr><td>2020</td><td>155</td></tr>
+<tr><td>2021</td><td>96</td></tr>
+<tr><td>2022</td><td>207</td></tr>
+<tr><td>2023</td><td>137</td></tr>
+<tr><td>2024</td><td>188</td></tr>
 </tbody></table>      </div>
     </div>
       
@@ -1564,84 +1532,84 @@ Discussions/Replies: These are short discussions of technical publications and c
         This indicator counts the number of citations received by documents from a journal and divides them by the total number of documents published in that journal. The chart shows the evolution of the average number of times documents published in a journal in the past two, three and four years have been cited in the current year. The two years line is equivalent to journal impact factor &#8482; (Thomson Reuters) metric.
         </p>
         <table><thead><tr><th>Cites per document</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>Cites / Doc. (4 years)</td><td>1999</td><td>1.335</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2000</td><td>1.498</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2001</td><td>1.617</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2002</td><td>1.596</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2003</td><td>1.622</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2004</td><td>1.667</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2005</td><td>1.853</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2006</td><td>1.717</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2007</td><td>1.751</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2008</td><td>1.804</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2009</td><td>2.089</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2010</td><td>2.128</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2011</td><td>2.049</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2012</td><td>2.213</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2013</td><td>2.271</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2014</td><td>2.307</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2015</td><td>2.265</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2016</td><td>2.297</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2017</td><td>2.340</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2018</td><td>2.366</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2019</td><td>2.452</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2020</td><td>2.631</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2021</td><td>2.707</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2022</td><td>2.953</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2023</td><td>2.751</td></tr>
-<tr><td>Cites / Doc. (4 years)</td><td>2024</td><td>3.064</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>1999</td><td>1.335</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2000</td><td>1.419</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2001</td><td>1.680</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2002</td><td>1.464</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2003</td><td>1.503</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2004</td><td>1.647</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2005</td><td>1.670</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2006</td><td>1.764</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2007</td><td>1.688</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2008</td><td>1.787</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2009</td><td>1.902</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2010</td><td>2.061</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2011</td><td>1.994</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2012</td><td>2.095</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2013</td><td>2.154</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2014</td><td>2.213</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2015</td><td>2.191</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2016</td><td>2.210</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2017</td><td>2.265</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2018</td><td>2.294</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2019</td><td>2.356</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2020</td><td>2.600</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2021</td><td>2.774</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2022</td><td>2.854</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2023</td><td>2.775</td></tr>
-<tr><td>Cites / Doc. (3 years)</td><td>2024</td><td>2.680</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>1999</td><td>1.191</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2000</td><td>1.487</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2001</td><td>1.414</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2002</td><td>1.354</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2003</td><td>1.441</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2004</td><td>1.416</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2005</td><td>1.527</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2006</td><td>1.615</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2007</td><td>1.552</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2008</td><td>1.595</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2009</td><td>1.697</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2010</td><td>2.000</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2011</td><td>1.847</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2012</td><td>1.916</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2013</td><td>1.995</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2014</td><td>2.041</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2015</td><td>2.079</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2016</td><td>2.054</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2017</td><td>2.083</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2018</td><td>2.166</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2019</td><td>2.197</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2020</td><td>2.627</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2021</td><td>2.530</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2022</td><td>2.866</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2023</td><td>2.265</td></tr>
-<tr><td>Cites / Doc. (2 years)</td><td>2024</td><td>2.442</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>1999</td><td>3.384</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2000</td><td>3.573</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2001</td><td>2.650</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2002</td><td>2.196</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2003</td><td>2.347</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2004</td><td>2.452</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2005</td><td>2.784</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2006</td><td>2.755</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2007</td><td>3.242</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2008</td><td>2.673</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2009</td><td>2.957</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2010</td><td>2.939</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2011</td><td>3.173</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2012</td><td>2.923</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2013</td><td>2.948</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2014</td><td>2.895</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2015</td><td>2.656</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2016</td><td>2.676</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2017</td><td>2.532</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2018</td><td>2.514</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2019</td><td>2.502</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2020</td><td>2.743</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2021</td><td>2.765</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2022</td><td>2.871</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2023</td><td>2.945</td></tr>
+<tr><td>Cites / Doc. (4 years)</td><td>2024</td><td>3.222</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>1999</td><td>3.384</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2000</td><td>3.959</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2001</td><td>2.390</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2002</td><td>2.039</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2003</td><td>2.201</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2004</td><td>2.458</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2005</td><td>2.823</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2006</td><td>2.780</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2007</td><td>3.182</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2008</td><td>2.481</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2009</td><td>2.867</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2010</td><td>2.774</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2011</td><td>3.118</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2012</td><td>2.728</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2013</td><td>2.891</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2014</td><td>2.496</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2015</td><td>2.621</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2016</td><td>2.620</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2017</td><td>2.675</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2018</td><td>2.298</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2019</td><td>2.477</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2020</td><td>2.674</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2021</td><td>2.803</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2022</td><td>2.876</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2023</td><td>3.085</td></tr>
+<tr><td>Cites / Doc. (3 years)</td><td>2024</td><td>3.139</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>1999</td><td>3.828</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2000</td><td>3.137</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2001</td><td>2.141</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2002</td><td>1.693</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2003</td><td>1.890</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2004</td><td>2.321</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2005</td><td>2.896</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2006</td><td>2.652</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2007</td><td>2.594</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2008</td><td>2.372</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2009</td><td>2.500</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2010</td><td>2.564</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2011</td><td>2.828</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2012</td><td>2.752</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2013</td><td>2.358</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2014</td><td>2.408</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2015</td><td>2.440</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2016</td><td>2.845</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2017</td><td>2.436</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2018</td><td>2.267</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2019</td><td>2.338</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2020</td><td>2.778</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2021</td><td>2.392</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2022</td><td>3.072</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2023</td><td>2.957</td></tr>
+<tr><td>Cites / Doc. (2 years)</td><td>2024</td><td>3.035</td></tr>
 </tbody></table>      </div>
     </div>
   </div>
@@ -1661,58 +1629,58 @@ Discussions/Replies: These are short discussions of technical publications and c
         Journal Self-citation is defined as the number of citation from a journal citing article to articles published by the same journal.
         </p>
          <table><thead><tr><th>Cites</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>Self Cites</td><td>1999</td><td>208</td></tr>
-<tr><td>Self Cites</td><td>2000</td><td>203</td></tr>
-<tr><td>Self Cites</td><td>2001</td><td>265</td></tr>
-<tr><td>Self Cites</td><td>2002</td><td>189</td></tr>
-<tr><td>Self Cites</td><td>2003</td><td>138</td></tr>
-<tr><td>Self Cites</td><td>2004</td><td>200</td></tr>
-<tr><td>Self Cites</td><td>2005</td><td>196</td></tr>
-<tr><td>Self Cites</td><td>2006</td><td>196</td></tr>
-<tr><td>Self Cites</td><td>2007</td><td>156</td></tr>
-<tr><td>Self Cites</td><td>2008</td><td>153</td></tr>
-<tr><td>Self Cites</td><td>2009</td><td>156</td></tr>
-<tr><td>Self Cites</td><td>2010</td><td>171</td></tr>
-<tr><td>Self Cites</td><td>2011</td><td>175</td></tr>
-<tr><td>Self Cites</td><td>2012</td><td>251</td></tr>
-<tr><td>Self Cites</td><td>2013</td><td>336</td></tr>
-<tr><td>Self Cites</td><td>2014</td><td>334</td></tr>
-<tr><td>Self Cites</td><td>2015</td><td>367</td></tr>
-<tr><td>Self Cites</td><td>2016</td><td>408</td></tr>
-<tr><td>Self Cites</td><td>2017</td><td>339</td></tr>
-<tr><td>Self Cites</td><td>2018</td><td>358</td></tr>
-<tr><td>Self Cites</td><td>2019</td><td>311</td></tr>
-<tr><td>Self Cites</td><td>2020</td><td>431</td></tr>
-<tr><td>Self Cites</td><td>2021</td><td>294</td></tr>
-<tr><td>Self Cites</td><td>2022</td><td>251</td></tr>
-<tr><td>Self Cites</td><td>2023</td><td>191</td></tr>
-<tr><td>Self Cites</td><td>2024</td><td>171</td></tr>
-<tr><td>Total Cites</td><td>1999</td><td>1399</td></tr>
-<tr><td>Total Cites</td><td>2000</td><td>1401</td></tr>
-<tr><td>Total Cites</td><td>2001</td><td>1724</td></tr>
-<tr><td>Total Cites</td><td>2002</td><td>1574</td></tr>
-<tr><td>Total Cites</td><td>2003</td><td>1710</td></tr>
-<tr><td>Total Cites</td><td>2004</td><td>1795</td></tr>
-<tr><td>Total Cites</td><td>2005</td><td>1852</td></tr>
-<tr><td>Total Cites</td><td>2006</td><td>1798</td></tr>
-<tr><td>Total Cites</td><td>2007</td><td>1789</td></tr>
-<tr><td>Total Cites</td><td>2008</td><td>1780</td></tr>
-<tr><td>Total Cites</td><td>2009</td><td>1881</td></tr>
-<tr><td>Total Cites</td><td>2010</td><td>2038</td></tr>
-<tr><td>Total Cites</td><td>2011</td><td>2046</td></tr>
-<tr><td>Total Cites</td><td>2012</td><td>2342</td></tr>
-<tr><td>Total Cites</td><td>2013</td><td>2805</td></tr>
-<tr><td>Total Cites</td><td>2014</td><td>3388</td></tr>
-<tr><td>Total Cites</td><td>2015</td><td>3760</td></tr>
-<tr><td>Total Cites</td><td>2016</td><td>3932</td></tr>
-<tr><td>Total Cites</td><td>2017</td><td>4099</td></tr>
-<tr><td>Total Cites</td><td>2018</td><td>4037</td></tr>
-<tr><td>Total Cites</td><td>2019</td><td>4142</td></tr>
-<tr><td>Total Cites</td><td>2020</td><td>4323</td></tr>
-<tr><td>Total Cites</td><td>2021</td><td>4597</td></tr>
-<tr><td>Total Cites</td><td>2022</td><td>4286</td></tr>
-<tr><td>Total Cites</td><td>2023</td><td>3694</td></tr>
-<tr><td>Total Cites</td><td>2024</td><td>3063</td></tr>
+<tr><td>Self Cites</td><td>1999</td><td>8</td></tr>
+<tr><td>Self Cites</td><td>2000</td><td>7</td></tr>
+<tr><td>Self Cites</td><td>2001</td><td>10</td></tr>
+<tr><td>Self Cites</td><td>2002</td><td>37</td></tr>
+<tr><td>Self Cites</td><td>2003</td><td>33</td></tr>
+<tr><td>Self Cites</td><td>2004</td><td>51</td></tr>
+<tr><td>Self Cites</td><td>2005</td><td>14</td></tr>
+<tr><td>Self Cites</td><td>2006</td><td>44</td></tr>
+<tr><td>Self Cites</td><td>2007</td><td>58</td></tr>
+<tr><td>Self Cites</td><td>2008</td><td>36</td></tr>
+<tr><td>Self Cites</td><td>2009</td><td>53</td></tr>
+<tr><td>Self Cites</td><td>2010</td><td>54</td></tr>
+<tr><td>Self Cites</td><td>2011</td><td>37</td></tr>
+<tr><td>Self Cites</td><td>2012</td><td>32</td></tr>
+<tr><td>Self Cites</td><td>2013</td><td>34</td></tr>
+<tr><td>Self Cites</td><td>2014</td><td>43</td></tr>
+<tr><td>Self Cites</td><td>2015</td><td>14</td></tr>
+<tr><td>Self Cites</td><td>2016</td><td>62</td></tr>
+<tr><td>Self Cites</td><td>2017</td><td>24</td></tr>
+<tr><td>Self Cites</td><td>2018</td><td>22</td></tr>
+<tr><td>Self Cites</td><td>2019</td><td>47</td></tr>
+<tr><td>Self Cites</td><td>2020</td><td>29</td></tr>
+<tr><td>Self Cites</td><td>2021</td><td>10</td></tr>
+<tr><td>Self Cites</td><td>2022</td><td>23</td></tr>
+<tr><td>Self Cites</td><td>2023</td><td>21</td></tr>
+<tr><td>Self Cites</td><td>2024</td><td>28</td></tr>
+<tr><td>Total Cites</td><td>1999</td><td>291</td></tr>
+<tr><td>Total Cites</td><td>2000</td><td>483</td></tr>
+<tr><td>Total Cites</td><td>2001</td><td>564</td></tr>
+<tr><td>Total Cites</td><td>2002</td><td>622</td></tr>
+<tr><td>Total Cites</td><td>2003</td><td>689</td></tr>
+<tr><td>Total Cites</td><td>2004</td><td>644</td></tr>
+<tr><td>Total Cites</td><td>2005</td><td>827</td></tr>
+<tr><td>Total Cites</td><td>2006</td><td>809</td></tr>
+<tr><td>Total Cites</td><td>2007</td><td>910</td></tr>
+<tr><td>Total Cites</td><td>2008</td><td>913</td></tr>
+<tr><td>Total Cites</td><td>2009</td><td>1184</td></tr>
+<tr><td>Total Cites</td><td>2010</td><td>1667</td></tr>
+<tr><td>Total Cites</td><td>2011</td><td>1846</td></tr>
+<tr><td>Total Cites</td><td>2012</td><td>1735</td></tr>
+<tr><td>Total Cites</td><td>2013</td><td>1486</td></tr>
+<tr><td>Total Cites</td><td>2014</td><td>1363</td></tr>
+<tr><td>Total Cites</td><td>2015</td><td>1468</td></tr>
+<tr><td>Total Cites</td><td>2016</td><td>1276</td></tr>
+<tr><td>Total Cites</td><td>2017</td><td>1193</td></tr>
+<tr><td>Total Cites</td><td>2018</td><td>1041</td></tr>
+<tr><td>Total Cites</td><td>2019</td><td>1449</td></tr>
+<tr><td>Total Cites</td><td>2020</td><td>1385</td></tr>
+<tr><td>Total Cites</td><td>2021</td><td>1382</td></tr>
+<tr><td>Total Cites</td><td>2022</td><td>1090</td></tr>
+<tr><td>Total Cites</td><td>2023</td><td>1413</td></tr>
+<tr><td>Total Cites</td><td>2024</td><td>1381</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -1733,58 +1701,58 @@ Discussions/Replies: These are short discussions of technical publications and c
     External citations are calculated by subtracting the number of self-citations from the total number of citations received by the journal’s documents.
         </p>
          <table><thead><tr><th>Cites</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>External Cites per document</td><td>1999</td><td>1.136</td></tr>
-<tr><td>External Cites per document</td><td>2000</td><td>1.214</td></tr>
-<tr><td>External Cites per document</td><td>2001</td><td>1.422</td></tr>
-<tr><td>External Cites per document</td><td>2002</td><td>1.288</td></tr>
-<tr><td>External Cites per document</td><td>2003</td><td>1.381</td></tr>
-<tr><td>External Cites per document</td><td>2004</td><td>1.463</td></tr>
-<tr><td>External Cites per document</td><td>2005</td><td>1.493</td></tr>
-<tr><td>External Cites per document</td><td>2006</td><td>1.572</td></tr>
-<tr><td>External Cites per document</td><td>2007</td><td>1.541</td></tr>
-<tr><td>External Cites per document</td><td>2008</td><td>1.634</td></tr>
-<tr><td>External Cites per document</td><td>2009</td><td>1.744</td></tr>
-<tr><td>External Cites per document</td><td>2010</td><td>1.888</td></tr>
-<tr><td>External Cites per document</td><td>2011</td><td>1.824</td></tr>
-<tr><td>External Cites per document</td><td>2012</td><td>1.870</td></tr>
-<tr><td>External Cites per document</td><td>2013</td><td>1.896</td></tr>
-<tr><td>External Cites per document</td><td>2014</td><td>1.995</td></tr>
-<tr><td>External Cites per document</td><td>2015</td><td>1.977</td></tr>
-<tr><td>External Cites per document</td><td>2016</td><td>1.981</td></tr>
-<tr><td>External Cites per document</td><td>2017</td><td>2.077</td></tr>
-<tr><td>External Cites per document</td><td>2018</td><td>2.090</td></tr>
-<tr><td>External Cites per document</td><td>2019</td><td>2.179</td></tr>
-<tr><td>External Cites per document</td><td>2020</td><td>2.340</td></tr>
-<tr><td>External Cites per document</td><td>2021</td><td>2.597</td></tr>
-<tr><td>External Cites per document</td><td>2022</td><td>2.686</td></tr>
-<tr><td>External Cites per document</td><td>2023</td><td>2.632</td></tr>
-<tr><td>External Cites per document</td><td>2024</td><td>2.530</td></tr>
-<tr><td>Cites per document</td><td>1999</td><td>1.335</td></tr>
-<tr><td>Cites per document</td><td>2000</td><td>1.419</td></tr>
-<tr><td>Cites per document</td><td>2001</td><td>1.680</td></tr>
-<tr><td>Cites per document</td><td>2002</td><td>1.464</td></tr>
-<tr><td>Cites per document</td><td>2003</td><td>1.503</td></tr>
-<tr><td>Cites per document</td><td>2004</td><td>1.647</td></tr>
-<tr><td>Cites per document</td><td>2005</td><td>1.670</td></tr>
-<tr><td>Cites per document</td><td>2006</td><td>1.764</td></tr>
-<tr><td>Cites per document</td><td>2007</td><td>1.688</td></tr>
-<tr><td>Cites per document</td><td>2008</td><td>1.787</td></tr>
-<tr><td>Cites per document</td><td>2009</td><td>1.902</td></tr>
-<tr><td>Cites per document</td><td>2010</td><td>2.061</td></tr>
-<tr><td>Cites per document</td><td>2011</td><td>1.994</td></tr>
-<tr><td>Cites per document</td><td>2012</td><td>2.095</td></tr>
-<tr><td>Cites per document</td><td>2013</td><td>2.154</td></tr>
-<tr><td>Cites per document</td><td>2014</td><td>2.213</td></tr>
-<tr><td>Cites per document</td><td>2015</td><td>2.191</td></tr>
-<tr><td>Cites per document</td><td>2016</td><td>2.210</td></tr>
-<tr><td>Cites per document</td><td>2017</td><td>2.265</td></tr>
-<tr><td>Cites per document</td><td>2018</td><td>2.294</td></tr>
-<tr><td>Cites per document</td><td>2019</td><td>2.356</td></tr>
-<tr><td>Cites per document</td><td>2020</td><td>2.600</td></tr>
-<tr><td>Cites per document</td><td>2021</td><td>2.774</td></tr>
-<tr><td>Cites per document</td><td>2022</td><td>2.854</td></tr>
-<tr><td>Cites per document</td><td>2023</td><td>2.775</td></tr>
-<tr><td>Cites per document</td><td>2024</td><td>2.680</td></tr>
+<tr><td>External Cites per document</td><td>1999</td><td>3.291</td></tr>
+<tr><td>External Cites per document</td><td>2000</td><td>3.902</td></tr>
+<tr><td>External Cites per document</td><td>2001</td><td>2.347</td></tr>
+<tr><td>External Cites per document</td><td>2002</td><td>1.918</td></tr>
+<tr><td>External Cites per document</td><td>2003</td><td>2.096</td></tr>
+<tr><td>External Cites per document</td><td>2004</td><td>2.263</td></tr>
+<tr><td>External Cites per document</td><td>2005</td><td>2.775</td></tr>
+<tr><td>External Cites per document</td><td>2006</td><td>2.629</td></tr>
+<tr><td>External Cites per document</td><td>2007</td><td>2.979</td></tr>
+<tr><td>External Cites per document</td><td>2008</td><td>2.383</td></tr>
+<tr><td>External Cites per document</td><td>2009</td><td>2.738</td></tr>
+<tr><td>External Cites per document</td><td>2010</td><td>2.684</td></tr>
+<tr><td>External Cites per document</td><td>2011</td><td>3.056</td></tr>
+<tr><td>External Cites per document</td><td>2012</td><td>2.678</td></tr>
+<tr><td>External Cites per document</td><td>2013</td><td>2.825</td></tr>
+<tr><td>External Cites per document</td><td>2014</td><td>2.418</td></tr>
+<tr><td>External Cites per document</td><td>2015</td><td>2.596</td></tr>
+<tr><td>External Cites per document</td><td>2016</td><td>2.493</td></tr>
+<tr><td>External Cites per document</td><td>2017</td><td>2.621</td></tr>
+<tr><td>External Cites per document</td><td>2018</td><td>2.249</td></tr>
+<tr><td>External Cites per document</td><td>2019</td><td>2.397</td></tr>
+<tr><td>External Cites per document</td><td>2020</td><td>2.618</td></tr>
+<tr><td>External Cites per document</td><td>2021</td><td>2.783</td></tr>
+<tr><td>External Cites per document</td><td>2022</td><td>2.815</td></tr>
+<tr><td>External Cites per document</td><td>2023</td><td>3.039</td></tr>
+<tr><td>External Cites per document</td><td>2024</td><td>3.075</td></tr>
+<tr><td>Cites per document</td><td>1999</td><td>3.384</td></tr>
+<tr><td>Cites per document</td><td>2000</td><td>3.959</td></tr>
+<tr><td>Cites per document</td><td>2001</td><td>2.390</td></tr>
+<tr><td>Cites per document</td><td>2002</td><td>2.039</td></tr>
+<tr><td>Cites per document</td><td>2003</td><td>2.201</td></tr>
+<tr><td>Cites per document</td><td>2004</td><td>2.458</td></tr>
+<tr><td>Cites per document</td><td>2005</td><td>2.823</td></tr>
+<tr><td>Cites per document</td><td>2006</td><td>2.780</td></tr>
+<tr><td>Cites per document</td><td>2007</td><td>3.182</td></tr>
+<tr><td>Cites per document</td><td>2008</td><td>2.481</td></tr>
+<tr><td>Cites per document</td><td>2009</td><td>2.867</td></tr>
+<tr><td>Cites per document</td><td>2010</td><td>2.774</td></tr>
+<tr><td>Cites per document</td><td>2011</td><td>3.118</td></tr>
+<tr><td>Cites per document</td><td>2012</td><td>2.728</td></tr>
+<tr><td>Cites per document</td><td>2013</td><td>2.891</td></tr>
+<tr><td>Cites per document</td><td>2014</td><td>2.496</td></tr>
+<tr><td>Cites per document</td><td>2015</td><td>2.621</td></tr>
+<tr><td>Cites per document</td><td>2016</td><td>2.620</td></tr>
+<tr><td>Cites per document</td><td>2017</td><td>2.675</td></tr>
+<tr><td>Cites per document</td><td>2018</td><td>2.298</td></tr>
+<tr><td>Cites per document</td><td>2019</td><td>2.477</td></tr>
+<tr><td>Cites per document</td><td>2020</td><td>2.674</td></tr>
+<tr><td>Cites per document</td><td>2021</td><td>2.803</td></tr>
+<tr><td>Cites per document</td><td>2022</td><td>2.876</td></tr>
+<tr><td>Cites per document</td><td>2023</td><td>3.085</td></tr>
+<tr><td>Cites per document</td><td>2024</td><td>3.139</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -1805,32 +1773,32 @@ Discussions/Replies: These are short discussions of technical publications and c
         International Collaboration accounts for the articles that have been produced by researchers from several countries. The chart shows the ratio of a journal's documents signed by researchers from more than one country; that is including more than one country address.
         </p>
         <table><thead><tr><th>Year</th><th>International Collaboration</th></tr></thead><tbody>
-<tr><td>1999</td><td>19.78</td></tr>
-<tr><td>2000</td><td>27.49</td></tr>
-<tr><td>2001</td><td>25.00</td></tr>
-<tr><td>2002</td><td>23.84</td></tr>
-<tr><td>2003</td><td>24.49</td></tr>
-<tr><td>2004</td><td>27.94</td></tr>
-<tr><td>2005</td><td>29.53</td></tr>
-<tr><td>2006</td><td>33.73</td></tr>
-<tr><td>2007</td><td>26.33</td></tr>
-<tr><td>2008</td><td>29.55</td></tr>
-<tr><td>2009</td><td>24.18</td></tr>
-<tr><td>2010</td><td>24.16</td></tr>
-<tr><td>2011</td><td>26.23</td></tr>
-<tr><td>2012</td><td>30.06</td></tr>
-<tr><td>2013</td><td>30.60</td></tr>
-<tr><td>2014</td><td>28.76</td></tr>
-<tr><td>2015</td><td>34.88</td></tr>
-<tr><td>2016</td><td>28.41</td></tr>
-<tr><td>2017</td><td>26.33</td></tr>
-<tr><td>2018</td><td>28.97</td></tr>
-<tr><td>2019</td><td>29.94</td></tr>
-<tr><td>2020</td><td>31.12</td></tr>
-<tr><td>2021</td><td>26.12</td></tr>
-<tr><td>2022</td><td>26.86</td></tr>
-<tr><td>2023</td><td>25.27</td></tr>
-<tr><td>2024</td><td>27.94</td></tr>
+<tr><td>1999</td><td>17.19</td></tr>
+<tr><td>2000</td><td>16.31</td></tr>
+<tr><td>2001</td><td>23.00</td></tr>
+<tr><td>2002</td><td>22.22</td></tr>
+<tr><td>2003</td><td>23.33</td></tr>
+<tr><td>2004</td><td>14.50</td></tr>
+<tr><td>2005</td><td>18.57</td></tr>
+<tr><td>2006</td><td>24.71</td></tr>
+<tr><td>2007</td><td>23.47</td></tr>
+<tr><td>2008</td><td>26.09</td></tr>
+<tr><td>2009</td><td>21.25</td></tr>
+<tr><td>2010</td><td>15.20</td></tr>
+<tr><td>2011</td><td>25.79</td></tr>
+<tr><td>2012</td><td>18.54</td></tr>
+<tr><td>2013</td><td>28.81</td></tr>
+<tr><td>2014</td><td>27.17</td></tr>
+<tr><td>2015</td><td>28.21</td></tr>
+<tr><td>2016</td><td>30.26</td></tr>
+<tr><td>2017</td><td>26.11</td></tr>
+<tr><td>2018</td><td>30.95</td></tr>
+<tr><td>2019</td><td>28.91</td></tr>
+<tr><td>2020</td><td>32.26</td></tr>
+<tr><td>2021</td><td>35.42</td></tr>
+<tr><td>2022</td><td>29.47</td></tr>
+<tr><td>2023</td><td>39.42</td></tr>
+<tr><td>2024</td><td>40.96</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -1862,58 +1830,58 @@ Discussions/Replies: These are short discussions of technical publications and c
       <div class="cellslide">
         <p>Not every article in a journal is considered primary research and therefore "citable", this chart shows the ratio of a journal's articles including substantial research (research articles, conference papers and reviews) in three year windows vs. those documents other than research articles, reviews and conference papers.</p>
         <table><thead><tr><th>Documents</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>Non-citable documents</td><td>1999</td><td>2</td></tr>
-<tr><td>Non-citable documents</td><td>2000</td><td>0</td></tr>
-<tr><td>Non-citable documents</td><td>2001</td><td>1</td></tr>
-<tr><td>Non-citable documents</td><td>2002</td><td>6</td></tr>
-<tr><td>Non-citable documents</td><td>2003</td><td>14</td></tr>
-<tr><td>Non-citable documents</td><td>2004</td><td>18</td></tr>
-<tr><td>Non-citable documents</td><td>2005</td><td>17</td></tr>
-<tr><td>Non-citable documents</td><td>2006</td><td>14</td></tr>
-<tr><td>Non-citable documents</td><td>2007</td><td>15</td></tr>
-<tr><td>Non-citable documents</td><td>2008</td><td>17</td></tr>
-<tr><td>Non-citable documents</td><td>2009</td><td>17</td></tr>
-<tr><td>Non-citable documents</td><td>2010</td><td>19</td></tr>
-<tr><td>Non-citable documents</td><td>2011</td><td>22</td></tr>
-<tr><td>Non-citable documents</td><td>2012</td><td>28</td></tr>
-<tr><td>Non-citable documents</td><td>2013</td><td>27</td></tr>
-<tr><td>Non-citable documents</td><td>2014</td><td>30</td></tr>
-<tr><td>Non-citable documents</td><td>2015</td><td>29</td></tr>
-<tr><td>Non-citable documents</td><td>2016</td><td>30</td></tr>
-<tr><td>Non-citable documents</td><td>2017</td><td>25</td></tr>
-<tr><td>Non-citable documents</td><td>2018</td><td>19</td></tr>
-<tr><td>Non-citable documents</td><td>2019</td><td>13</td></tr>
-<tr><td>Non-citable documents</td><td>2020</td><td>10</td></tr>
-<tr><td>Non-citable documents</td><td>2021</td><td>7</td></tr>
-<tr><td>Non-citable documents</td><td>2022</td><td>6</td></tr>
-<tr><td>Non-citable documents</td><td>2023</td><td>2</td></tr>
-<tr><td>Non-citable documents</td><td>2024</td><td>3</td></tr>
-<tr><td>Citable documents</td><td>1999</td><td>1046</td></tr>
-<tr><td>Citable documents</td><td>2000</td><td>987</td></tr>
-<tr><td>Citable documents</td><td>2001</td><td>1025</td></tr>
-<tr><td>Citable documents</td><td>2002</td><td>1069</td></tr>
-<tr><td>Citable documents</td><td>2003</td><td>1124</td></tr>
-<tr><td>Citable documents</td><td>2004</td><td>1072</td></tr>
-<tr><td>Citable documents</td><td>2005</td><td>1092</td></tr>
-<tr><td>Citable documents</td><td>2006</td><td>1005</td></tr>
-<tr><td>Citable documents</td><td>2007</td><td>1045</td></tr>
-<tr><td>Citable documents</td><td>2008</td><td>979</td></tr>
-<tr><td>Citable documents</td><td>2009</td><td>972</td></tr>
-<tr><td>Citable documents</td><td>2010</td><td>970</td></tr>
-<tr><td>Citable documents</td><td>2011</td><td>1004</td></tr>
-<tr><td>Citable documents</td><td>2012</td><td>1090</td></tr>
-<tr><td>Citable documents</td><td>2013</td><td>1275</td></tr>
-<tr><td>Citable documents</td><td>2014</td><td>1501</td></tr>
-<tr><td>Citable documents</td><td>2015</td><td>1687</td></tr>
-<tr><td>Citable documents</td><td>2016</td><td>1749</td></tr>
-<tr><td>Citable documents</td><td>2017</td><td>1785</td></tr>
-<tr><td>Citable documents</td><td>2018</td><td>1741</td></tr>
-<tr><td>Citable documents</td><td>2019</td><td>1745</td></tr>
-<tr><td>Citable documents</td><td>2020</td><td>1653</td></tr>
-<tr><td>Citable documents</td><td>2021</td><td>1650</td></tr>
-<tr><td>Citable documents</td><td>2022</td><td>1496</td></tr>
-<tr><td>Citable documents</td><td>2023</td><td>1329</td></tr>
-<tr><td>Citable documents</td><td>2024</td><td>1140</td></tr>
+<tr><td>Non-citable documents</td><td>1999</td><td>0</td></tr>
+<tr><td>Non-citable documents</td><td>2000</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2001</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2002</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2003</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2004</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2005</td><td>3</td></tr>
+<tr><td>Non-citable documents</td><td>2006</td><td>1</td></tr>
+<tr><td>Non-citable documents</td><td>2007</td><td>2</td></tr>
+<tr><td>Non-citable documents</td><td>2008</td><td>1</td></tr>
+<tr><td>Non-citable documents</td><td>2009</td><td>6</td></tr>
+<tr><td>Non-citable documents</td><td>2010</td><td>16</td></tr>
+<tr><td>Non-citable documents</td><td>2011</td><td>24</td></tr>
+<tr><td>Non-citable documents</td><td>2012</td><td>25</td></tr>
+<tr><td>Non-citable documents</td><td>2013</td><td>22</td></tr>
+<tr><td>Non-citable documents</td><td>2014</td><td>20</td></tr>
+<tr><td>Non-citable documents</td><td>2015</td><td>20</td></tr>
+<tr><td>Non-citable documents</td><td>2016</td><td>15</td></tr>
+<tr><td>Non-citable documents</td><td>2017</td><td>17</td></tr>
+<tr><td>Non-citable documents</td><td>2018</td><td>18</td></tr>
+<tr><td>Non-citable documents</td><td>2019</td><td>25</td></tr>
+<tr><td>Non-citable documents</td><td>2020</td><td>22</td></tr>
+<tr><td>Non-citable documents</td><td>2021</td><td>22</td></tr>
+<tr><td>Non-citable documents</td><td>2022</td><td>19</td></tr>
+<tr><td>Non-citable documents</td><td>2023</td><td>21</td></tr>
+<tr><td>Non-citable documents</td><td>2024</td><td>21</td></tr>
+<tr><td>Citable documents</td><td>1999</td><td>86</td></tr>
+<tr><td>Citable documents</td><td>2000</td><td>120</td></tr>
+<tr><td>Citable documents</td><td>2001</td><td>234</td></tr>
+<tr><td>Citable documents</td><td>2002</td><td>303</td></tr>
+<tr><td>Citable documents</td><td>2003</td><td>311</td></tr>
+<tr><td>Citable documents</td><td>2004</td><td>260</td></tr>
+<tr><td>Citable documents</td><td>2005</td><td>290</td></tr>
+<tr><td>Citable documents</td><td>2006</td><td>290</td></tr>
+<tr><td>Citable documents</td><td>2007</td><td>284</td></tr>
+<tr><td>Citable documents</td><td>2008</td><td>367</td></tr>
+<tr><td>Citable documents</td><td>2009</td><td>407</td></tr>
+<tr><td>Citable documents</td><td>2010</td><td>585</td></tr>
+<tr><td>Citable documents</td><td>2011</td><td>568</td></tr>
+<tr><td>Citable documents</td><td>2012</td><td>611</td></tr>
+<tr><td>Citable documents</td><td>2013</td><td>492</td></tr>
+<tr><td>Citable documents</td><td>2014</td><td>526</td></tr>
+<tr><td>Citable documents</td><td>2015</td><td>540</td></tr>
+<tr><td>Citable documents</td><td>2016</td><td>472</td></tr>
+<tr><td>Citable documents</td><td>2017</td><td>429</td></tr>
+<tr><td>Citable documents</td><td>2018</td><td>435</td></tr>
+<tr><td>Citable documents</td><td>2019</td><td>560</td></tr>
+<tr><td>Citable documents</td><td>2020</td><td>496</td></tr>
+<tr><td>Citable documents</td><td>2021</td><td>471</td></tr>
+<tr><td>Citable documents</td><td>2022</td><td>360</td></tr>
+<tr><td>Citable documents</td><td>2023</td><td>437</td></tr>
+<tr><td>Citable documents</td><td>2024</td><td>419</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -1930,58 +1898,58 @@ Discussions/Replies: These are short discussions of technical publications and c
       <div class="cellslide">
         <p>Ratio of a journal's items, grouped in three years windows, that have been cited at least once vs. those not cited during the following year.</p>
          <table><thead><tr><th>Documents</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>Uncited documents</td><td>1999</td><td>458</td></tr>
-<tr><td>Uncited documents</td><td>2000</td><td>433</td></tr>
-<tr><td>Uncited documents</td><td>2001</td><td>429</td></tr>
-<tr><td>Uncited documents</td><td>2002</td><td>477</td></tr>
-<tr><td>Uncited documents</td><td>2003</td><td>511</td></tr>
-<tr><td>Uncited documents</td><td>2004</td><td>428</td></tr>
-<tr><td>Uncited documents</td><td>2005</td><td>412</td></tr>
-<tr><td>Uncited documents</td><td>2006</td><td>362</td></tr>
-<tr><td>Uncited documents</td><td>2007</td><td>403</td></tr>
-<tr><td>Uncited documents</td><td>2008</td><td>334</td></tr>
-<tr><td>Uncited documents</td><td>2009</td><td>331</td></tr>
-<tr><td>Uncited documents</td><td>2010</td><td>298</td></tr>
-<tr><td>Uncited documents</td><td>2011</td><td>315</td></tr>
-<tr><td>Uncited documents</td><td>2012</td><td>350</td></tr>
-<tr><td>Uncited documents</td><td>2013</td><td>404</td></tr>
-<tr><td>Uncited documents</td><td>2014</td><td>450</td></tr>
-<tr><td>Uncited documents</td><td>2015</td><td>471</td></tr>
-<tr><td>Uncited documents</td><td>2016</td><td>487</td></tr>
-<tr><td>Uncited documents</td><td>2017</td><td>463</td></tr>
-<tr><td>Uncited documents</td><td>2018</td><td>455</td></tr>
-<tr><td>Uncited documents</td><td>2019</td><td>426</td></tr>
-<tr><td>Uncited documents</td><td>2020</td><td>366</td></tr>
-<tr><td>Uncited documents</td><td>2021</td><td>345</td></tr>
-<tr><td>Uncited documents</td><td>2022</td><td>313</td></tr>
-<tr><td>Uncited documents</td><td>2023</td><td>303</td></tr>
-<tr><td>Uncited documents</td><td>2024</td><td>242</td></tr>
-<tr><td>Cited documents</td><td>1999</td><td>590</td></tr>
-<tr><td>Cited documents</td><td>2000</td><td>554</td></tr>
-<tr><td>Cited documents</td><td>2001</td><td>597</td></tr>
-<tr><td>Cited documents</td><td>2002</td><td>598</td></tr>
-<tr><td>Cited documents</td><td>2003</td><td>627</td></tr>
-<tr><td>Cited documents</td><td>2004</td><td>662</td></tr>
-<tr><td>Cited documents</td><td>2005</td><td>697</td></tr>
-<tr><td>Cited documents</td><td>2006</td><td>657</td></tr>
-<tr><td>Cited documents</td><td>2007</td><td>657</td></tr>
-<tr><td>Cited documents</td><td>2008</td><td>662</td></tr>
-<tr><td>Cited documents</td><td>2009</td><td>658</td></tr>
-<tr><td>Cited documents</td><td>2010</td><td>691</td></tr>
-<tr><td>Cited documents</td><td>2011</td><td>711</td></tr>
-<tr><td>Cited documents</td><td>2012</td><td>768</td></tr>
-<tr><td>Cited documents</td><td>2013</td><td>898</td></tr>
-<tr><td>Cited documents</td><td>2014</td><td>1081</td></tr>
-<tr><td>Cited documents</td><td>2015</td><td>1245</td></tr>
-<tr><td>Cited documents</td><td>2016</td><td>1292</td></tr>
-<tr><td>Cited documents</td><td>2017</td><td>1347</td></tr>
-<tr><td>Cited documents</td><td>2018</td><td>1305</td></tr>
-<tr><td>Cited documents</td><td>2019</td><td>1332</td></tr>
-<tr><td>Cited documents</td><td>2020</td><td>1297</td></tr>
-<tr><td>Cited documents</td><td>2021</td><td>1312</td></tr>
-<tr><td>Cited documents</td><td>2022</td><td>1189</td></tr>
-<tr><td>Cited documents</td><td>2023</td><td>1028</td></tr>
-<tr><td>Cited documents</td><td>2024</td><td>901</td></tr>
+<tr><td>Uncited documents</td><td>1999</td><td>14</td></tr>
+<tr><td>Uncited documents</td><td>2000</td><td>18</td></tr>
+<tr><td>Uncited documents</td><td>2001</td><td>59</td></tr>
+<tr><td>Uncited documents</td><td>2002</td><td>97</td></tr>
+<tr><td>Uncited documents</td><td>2003</td><td>94</td></tr>
+<tr><td>Uncited documents</td><td>2004</td><td>77</td></tr>
+<tr><td>Uncited documents</td><td>2005</td><td>63</td></tr>
+<tr><td>Uncited documents</td><td>2006</td><td>65</td></tr>
+<tr><td>Uncited documents</td><td>2007</td><td>62</td></tr>
+<tr><td>Uncited documents</td><td>2008</td><td>117</td></tr>
+<tr><td>Uncited documents</td><td>2009</td><td>107</td></tr>
+<tr><td>Uncited documents</td><td>2010</td><td>149</td></tr>
+<tr><td>Uncited documents</td><td>2011</td><td>134</td></tr>
+<tr><td>Uncited documents</td><td>2012</td><td>178</td></tr>
+<tr><td>Uncited documents</td><td>2013</td><td>126</td></tr>
+<tr><td>Uncited documents</td><td>2014</td><td>137</td></tr>
+<tr><td>Uncited documents</td><td>2015</td><td>146</td></tr>
+<tr><td>Uncited documents</td><td>2016</td><td>126</td></tr>
+<tr><td>Uncited documents</td><td>2017</td><td>98</td></tr>
+<tr><td>Uncited documents</td><td>2018</td><td>115</td></tr>
+<tr><td>Uncited documents</td><td>2019</td><td>142</td></tr>
+<tr><td>Uncited documents</td><td>2020</td><td>120</td></tr>
+<tr><td>Uncited documents</td><td>2021</td><td>114</td></tr>
+<tr><td>Uncited documents</td><td>2022</td><td>88</td></tr>
+<tr><td>Uncited documents</td><td>2023</td><td>111</td></tr>
+<tr><td>Uncited documents</td><td>2024</td><td>98</td></tr>
+<tr><td>Cited documents</td><td>1999</td><td>72</td></tr>
+<tr><td>Cited documents</td><td>2000</td><td>104</td></tr>
+<tr><td>Cited documents</td><td>2001</td><td>177</td></tr>
+<tr><td>Cited documents</td><td>2002</td><td>208</td></tr>
+<tr><td>Cited documents</td><td>2003</td><td>219</td></tr>
+<tr><td>Cited documents</td><td>2004</td><td>185</td></tr>
+<tr><td>Cited documents</td><td>2005</td><td>230</td></tr>
+<tr><td>Cited documents</td><td>2006</td><td>226</td></tr>
+<tr><td>Cited documents</td><td>2007</td><td>224</td></tr>
+<tr><td>Cited documents</td><td>2008</td><td>251</td></tr>
+<tr><td>Cited documents</td><td>2009</td><td>306</td></tr>
+<tr><td>Cited documents</td><td>2010</td><td>452</td></tr>
+<tr><td>Cited documents</td><td>2011</td><td>458</td></tr>
+<tr><td>Cited documents</td><td>2012</td><td>458</td></tr>
+<tr><td>Cited documents</td><td>2013</td><td>388</td></tr>
+<tr><td>Cited documents</td><td>2014</td><td>409</td></tr>
+<tr><td>Cited documents</td><td>2015</td><td>414</td></tr>
+<tr><td>Cited documents</td><td>2016</td><td>361</td></tr>
+<tr><td>Cited documents</td><td>2017</td><td>348</td></tr>
+<tr><td>Cited documents</td><td>2018</td><td>338</td></tr>
+<tr><td>Cited documents</td><td>2019</td><td>443</td></tr>
+<tr><td>Cited documents</td><td>2020</td><td>398</td></tr>
+<tr><td>Cited documents</td><td>2021</td><td>379</td></tr>
+<tr><td>Cited documents</td><td>2022</td><td>291</td></tr>
+<tr><td>Cited documents</td><td>2023</td><td>347</td></tr>
+<tr><td>Cited documents</td><td>2024</td><td>342</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -2000,32 +1968,32 @@ Discussions/Replies: These are short discussions of technical publications and c
         Evolution of the percentage of female authors.
         </p>
         <table><thead><tr><th>Year</th><th>Female Percent</th></tr></thead><tbody>
-<tr><td>1999</td><td>11.81</td></tr>
-<tr><td>2000</td><td>11.74</td></tr>
-<tr><td>2001</td><td>11.96</td></tr>
-<tr><td>2002</td><td>13.53</td></tr>
-<tr><td>2003</td><td>14.89</td></tr>
-<tr><td>2004</td><td>12.71</td></tr>
-<tr><td>2005</td><td>12.38</td></tr>
-<tr><td>2006</td><td>14.74</td></tr>
-<tr><td>2007</td><td>12.91</td></tr>
-<tr><td>2008</td><td>18.75</td></tr>
-<tr><td>2009</td><td>16.40</td></tr>
-<tr><td>2010</td><td>15.59</td></tr>
-<tr><td>2011</td><td>15.81</td></tr>
-<tr><td>2012</td><td>18.37</td></tr>
-<tr><td>2013</td><td>18.03</td></tr>
-<tr><td>2014</td><td>18.08</td></tr>
-<tr><td>2015</td><td>18.59</td></tr>
-<tr><td>2016</td><td>21.23</td></tr>
-<tr><td>2017</td><td>21.06</td></tr>
-<tr><td>2018</td><td>20.86</td></tr>
-<tr><td>2019</td><td>21.94</td></tr>
-<tr><td>2020</td><td>23.05</td></tr>
-<tr><td>2021</td><td>22.62</td></tr>
-<tr><td>2022</td><td>21.70</td></tr>
-<tr><td>2023</td><td>22.61</td></tr>
-<tr><td>2024</td><td>24.18</td></tr>
+<tr><td>1999</td><td>11.03</td></tr>
+<tr><td>2000</td><td>21.05</td></tr>
+<tr><td>2001</td><td>18.95</td></tr>
+<tr><td>2002</td><td>20.64</td></tr>
+<tr><td>2003</td><td>16.79</td></tr>
+<tr><td>2004</td><td>20.77</td></tr>
+<tr><td>2005</td><td>20.23</td></tr>
+<tr><td>2006</td><td>25.47</td></tr>
+<tr><td>2007</td><td>25.04</td></tr>
+<tr><td>2008</td><td>24.63</td></tr>
+<tr><td>2009</td><td>23.14</td></tr>
+<tr><td>2010</td><td>21.48</td></tr>
+<tr><td>2011</td><td>30.03</td></tr>
+<tr><td>2012</td><td>25.43</td></tr>
+<tr><td>2013</td><td>27.48</td></tr>
+<tr><td>2014</td><td>23.63</td></tr>
+<tr><td>2015</td><td>28.08</td></tr>
+<tr><td>2016</td><td>28.68</td></tr>
+<tr><td>2017</td><td>29.18</td></tr>
+<tr><td>2018</td><td>27.72</td></tr>
+<tr><td>2019</td><td>31.55</td></tr>
+<tr><td>2020</td><td>30.39</td></tr>
+<tr><td>2021</td><td>33.95</td></tr>
+<tr><td>2022</td><td>39.07</td></tr>
+<tr><td>2023</td><td>33.86</td></tr>
+<tr><td>2024</td><td>39.46</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -2044,30 +2012,30 @@ Discussions/Replies: These are short discussions of technical publications and c
         Evolution of the number of documents cited by public policy documents according to Overton database.
         </p>
          <table><thead><tr><th>Documents</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>Overton</td><td>1999</td><td>6</td></tr>
-<tr><td>Overton</td><td>2000</td><td>5</td></tr>
-<tr><td>Overton</td><td>2001</td><td>11</td></tr>
-<tr><td>Overton</td><td>2002</td><td>6</td></tr>
-<tr><td>Overton</td><td>2003</td><td>5</td></tr>
+<tr><td>Overton</td><td>1999</td><td>0</td></tr>
+<tr><td>Overton</td><td>2000</td><td>0</td></tr>
+<tr><td>Overton</td><td>2001</td><td>0</td></tr>
+<tr><td>Overton</td><td>2002</td><td>0</td></tr>
+<tr><td>Overton</td><td>2003</td><td>0</td></tr>
 <tr><td>Overton</td><td>2004</td><td>4</td></tr>
-<tr><td>Overton</td><td>2005</td><td>3</td></tr>
-<tr><td>Overton</td><td>2006</td><td>2</td></tr>
-<tr><td>Overton</td><td>2007</td><td>5</td></tr>
-<tr><td>Overton</td><td>2008</td><td>9</td></tr>
-<tr><td>Overton</td><td>2009</td><td>9</td></tr>
-<tr><td>Overton</td><td>2010</td><td>5</td></tr>
-<tr><td>Overton</td><td>2011</td><td>9</td></tr>
-<tr><td>Overton</td><td>2012</td><td>11</td></tr>
-<tr><td>Overton</td><td>2013</td><td>5</td></tr>
-<tr><td>Overton</td><td>2014</td><td>9</td></tr>
-<tr><td>Overton</td><td>2015</td><td>9</td></tr>
-<tr><td>Overton</td><td>2016</td><td>7</td></tr>
-<tr><td>Overton</td><td>2017</td><td>5</td></tr>
-<tr><td>Overton</td><td>2018</td><td>6</td></tr>
+<tr><td>Overton</td><td>2005</td><td>1</td></tr>
+<tr><td>Overton</td><td>2006</td><td>0</td></tr>
+<tr><td>Overton</td><td>2007</td><td>3</td></tr>
+<tr><td>Overton</td><td>2008</td><td>0</td></tr>
+<tr><td>Overton</td><td>2009</td><td>6</td></tr>
+<tr><td>Overton</td><td>2010</td><td>1</td></tr>
+<tr><td>Overton</td><td>2011</td><td>3</td></tr>
+<tr><td>Overton</td><td>2012</td><td>0</td></tr>
+<tr><td>Overton</td><td>2013</td><td>4</td></tr>
+<tr><td>Overton</td><td>2014</td><td>3</td></tr>
+<tr><td>Overton</td><td>2015</td><td>0</td></tr>
+<tr><td>Overton</td><td>2016</td><td>6</td></tr>
+<tr><td>Overton</td><td>2017</td><td>1</td></tr>
+<tr><td>Overton</td><td>2018</td><td>0</td></tr>
 <tr><td>Overton</td><td>2019</td><td>0</td></tr>
 <tr><td>Overton</td><td>2020</td><td>0</td></tr>
-<tr><td>Overton</td><td>2021</td><td>0</td></tr>
-<tr><td>Overton</td><td>2022</td><td>1</td></tr>
+<tr><td>Overton</td><td>2021</td><td>1</td></tr>
+<tr><td>Overton</td><td>2022</td><td>0</td></tr>
 <tr><td>Overton</td><td>2023</td><td>0</td></tr>
 <tr><td>Overton</td><td>2024</td><td>0</td></tr>
 </tbody></table>      </div>
@@ -2088,13 +2056,13 @@ Discussions/Replies: These are short discussions of technical publications and c
         Evolution of the number of documents related to Sustainable Development Goals defined by United Nations. Available from 2018 onwards.
         </p>
          <table><thead><tr><th>Documents</th><th>Year</th><th>Value</th></tr></thead><tbody>
-<tr><td>SDG</td><td>2018</td><td>27</td></tr>
-<tr><td>SDG</td><td>2019</td><td>32</td></tr>
-<tr><td>SDG</td><td>2020</td><td>54</td></tr>
-<tr><td>SDG</td><td>2021</td><td>37</td></tr>
-<tr><td>SDG</td><td>2022</td><td>35</td></tr>
-<tr><td>SDG</td><td>2023</td><td>44</td></tr>
-<tr><td>SDG</td><td>2024</td><td>43</td></tr>
+<tr><td>SDG</td><td>2018</td><td>41</td></tr>
+<tr><td>SDG</td><td>2019</td><td>28</td></tr>
+<tr><td>SDG</td><td>2020</td><td>33</td></tr>
+<tr><td>SDG</td><td>2021</td><td>39</td></tr>
+<tr><td>SDG</td><td>2022</td><td>52</td></tr>
+<tr><td>SDG</td><td>2023</td><td>51</td></tr>
+<tr><td>SDG</td><td>2024</td><td>89</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -2113,32 +2081,32 @@ Discussions/Replies: These are short discussions of technical publications and c
         It estimates the article processing charges (APCs) a journal might charge, based on its visibility, prestige, and impact as measured by the SJR. It does not reflect the actual APC, but rather a calculated approximation based on journal quality.
         </p>
          <table><thead><tr><th>Year</th><th>Est. APC (USD)</th></tr></thead><tbody>
-<tr><td>1999</td><td>3780</td></tr>
-<tr><td>2000</td><td>3754</td></tr>
-<tr><td>2001</td><td>3746</td></tr>
-<tr><td>2002</td><td>3742</td></tr>
-<tr><td>2003</td><td>3712</td></tr>
-<tr><td>2004</td><td>3668</td></tr>
-<tr><td>2005</td><td>3623</td></tr>
-<tr><td>2006</td><td>3584</td></tr>
-<tr><td>2007</td><td>3534</td></tr>
-<tr><td>2008</td><td>3536</td></tr>
-<tr><td>2009</td><td>3555</td></tr>
-<tr><td>2010</td><td>3589</td></tr>
-<tr><td>2011</td><td>3598</td></tr>
-<tr><td>2012</td><td>3608</td></tr>
-<tr><td>2013</td><td>3609</td></tr>
-<tr><td>2014</td><td>3611</td></tr>
-<tr><td>2015</td><td>3575</td></tr>
-<tr><td>2016</td><td>3549</td></tr>
-<tr><td>2017</td><td>3517</td></tr>
-<tr><td>2018</td><td>3463</td></tr>
-<tr><td>2019</td><td>3382</td></tr>
-<tr><td>2020</td><td>3334</td></tr>
-<tr><td>2021</td><td>3290</td></tr>
-<tr><td>2022</td><td>3247</td></tr>
-<tr><td>2023</td><td>3218</td></tr>
-<tr><td>2024</td><td>3190</td></tr>
+<tr><td>1999</td><td>3481</td></tr>
+<tr><td>2000</td><td>3736</td></tr>
+<tr><td>2001</td><td>3682</td></tr>
+<tr><td>2002</td><td>3631</td></tr>
+<tr><td>2003</td><td>3608</td></tr>
+<tr><td>2004</td><td>3616</td></tr>
+<tr><td>2005</td><td>3526</td></tr>
+<tr><td>2006</td><td>3541</td></tr>
+<tr><td>2007</td><td>3570</td></tr>
+<tr><td>2008</td><td>3563</td></tr>
+<tr><td>2009</td><td>3556</td></tr>
+<tr><td>2010</td><td>3559</td></tr>
+<tr><td>2011</td><td>3535</td></tr>
+<tr><td>2012</td><td>3502</td></tr>
+<tr><td>2013</td><td>3489</td></tr>
+<tr><td>2014</td><td>3458</td></tr>
+<tr><td>2015</td><td>3396</td></tr>
+<tr><td>2016</td><td>3354</td></tr>
+<tr><td>2017</td><td>3326</td></tr>
+<tr><td>2018</td><td>3277</td></tr>
+<tr><td>2019</td><td>3242</td></tr>
+<tr><td>2020</td><td>3215</td></tr>
+<tr><td>2021</td><td>3179</td></tr>
+<tr><td>2022</td><td>3126</td></tr>
+<tr><td>2023</td><td>3106</td></tr>
+<tr><td>2024</td><td>3085</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
@@ -2157,41 +2125,41 @@ Discussions/Replies: These are short discussions of technical publications and c
         It represents the potential financial worth of a journal. It is obtained by multiplying the journal's Estimated APC by the total number of citable documents published over the past five years. This value reflects the hypothetical revenue a journal could generate based on its estimated publication costs and scholarly output.
         </p>
          <table><thead><tr><th>Year</th><th>Est. value (USD)</th></tr></thead><tbody>
-<tr><td>1999</td><td>1394810</td></tr>
-<tr><td>2000</td><td>2669240</td></tr>
-<tr><td>2001</td><td>4026479</td></tr>
-<tr><td>2002</td><td>5639515</td></tr>
-<tr><td>2003</td><td>6685034</td></tr>
-<tr><td>2004</td><td>6657988</td></tr>
-<tr><td>2005</td><td>6575211</td></tr>
-<tr><td>2006</td><td>6400135</td></tr>
-<tr><td>2007</td><td>5912782</td></tr>
-<tr><td>2008</td><td>6060913</td></tr>
-<tr><td>2009</td><td>5922457</td></tr>
-<tr><td>2010</td><td>6030079</td></tr>
-<tr><td>2011</td><td>6376429</td></tr>
-<tr><td>2012</td><td>7114379</td></tr>
-<tr><td>2013</td><td>8019170</td></tr>
-<tr><td>2014</td><td>9024221</td></tr>
-<tr><td>2015</td><td>9743191</td></tr>
-<tr><td>2016</td><td>10341502</td></tr>
-<tr><td>2017</td><td>10401172</td></tr>
-<tr><td>2018</td><td>10223947</td></tr>
-<tr><td>2019</td><td>9674790</td></tr>
-<tr><td>2020</td><td>9451122</td></tr>
-<tr><td>2021</td><td>8698782</td></tr>
-<tr><td>2022</td><td>7896685</td></tr>
-<tr><td>2023</td><td>7143414</td></tr>
-<tr><td>2024</td><td>6640892</td></tr>
+<tr><td>1999</td><td>222799</td></tr>
+<tr><td>2000</td><td>765798</td></tr>
+<tr><td>2001</td><td>1122923</td></tr>
+<tr><td>2002</td><td>1368898</td></tr>
+<tr><td>2003</td><td>1684955</td></tr>
+<tr><td>2004</td><td>1930855</td></tr>
+<tr><td>2005</td><td>1632668</td></tr>
+<tr><td>2006</td><td>1586534</td></tr>
+<tr><td>2007</td><td>2102944</td></tr>
+<tr><td>2008</td><td>2187756</td></tr>
+<tr><td>2009</td><td>2688195</td></tr>
+<tr><td>2010</td><td>3167934</td></tr>
+<tr><td>2011</td><td>3407642</td></tr>
+<tr><td>2012</td><td>3158467</td></tr>
+<tr><td>2013</td><td>3568895</td></tr>
+<tr><td>2014</td><td>3192038</td></tr>
+<tr><td>2015</td><td>2706365</td></tr>
+<tr><td>2016</td><td>2793650</td></tr>
+<tr><td>2017</td><td>2866800</td></tr>
+<tr><td>2018</td><td>2739535</td></tr>
+<tr><td>2019</td><td>2564343</td></tr>
+<tr><td>2020</td><td>2790279</td></tr>
+<tr><td>2021</td><td>2444926</td></tr>
+<tr><td>2022</td><td>2488371</td></tr>
+<tr><td>2023</td><td>2245534</td></tr>
+<tr><td>2024</td><td>2415434</td></tr>
 </tbody></table>      </div>
     </div>
    </div>
 
     <div class="cell1x1 transparentcell">
-      <img src="journal_img.php?id=27356" alt="Scimago Journal &amp; Country Rank" class="imgwidget"/>
+      <img src="journal_img.php?id=21971" alt="Scimago Journal &amp; Country Rank" class="imgwidget"/>
       <div class="widgetlegend"><div class="titlewidget">Show this widget in your own website</div><br />
         Just copy the code below and paste within your html code:
-        <input id="embed_code" name="embed_code" readonly="" onClick="this.select();" value="<a href=&quot;https://www.scimagojr.com/journalsearch.php?q=27356&amp;amp;tip=sid&amp;amp;exact=no&quot; title=&quot;SCImago Journal &amp;amp; Country Rank&quot;><img border=&quot;0&quot; src=&quot;https://www.scimagojr.com/journal_img.php?id=27356&quot; alt=&quot;SCImago Journal &amp;amp; Country Rank&quot;  /></a>" size="25" />
+        <input id="embed_code" name="embed_code" readonly="" onClick="this.select();" value="<a href=&quot;https://www.scimagojr.com/journalsearch.php?q=21971&amp;amp;tip=sid&amp;amp;exact=no&quot; title=&quot;SCImago Journal &amp;amp; Country Rank&quot;><img border=&quot;0&quot; src=&quot;https://www.scimagojr.com/journal_img.php?id=21971&quot; alt=&quot;SCImago Journal &amp;amp; Country Rank&quot;  /></a>" size="25" />
       </div>
     </div>
 
